@@ -1,0 +1,70 @@
+.Footer {
+  background: var(--black);
+}
+#body .link-underline {
+  color: var(--white) ;
+}
+
+.ft-1 p {
+  padding: 0rem 5rem 0.8rem 0;
+}
+/* .footer-icons i {
+  padding: 0.4rem 0.5rem;
+  background: #f2f7ff;
+  margin: 0 0.5rem;
+  color: #10316b;
+} */
+/* .footer-icons i:hover {
+  background: #ffe867;
+  color: #10316b;
+  transition: 0.6s;
+  cursor: pointer;
+} */
+.ft-2 ul {
+  list-style: none;
+  padding-left: 0;
+}
+.ft-2 ul li {
+  padding: 0.35rem 0;
+}
+.ft-2 ul a {
+  font-size: 1.06rem;
+}
+.Last-footer {
+  background: var(--black);
+}
+
+/* Hover Links css */
+/* .link-underline {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  transform: scale(1);
+} */
+
+/* .link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+} */
+
+/* .link-underline:hover {
+  color: #ffe867;
+  transform: scale(1.1);
+} */
+
+/* .link-underline:hover::after {
+  background-color: #ffe867;
+} */
+
+.text-highlighter {
+  color: var(--white);
+}
+#body .logo{
+}

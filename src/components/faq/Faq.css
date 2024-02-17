@@ -1,0 +1,18 @@
+.h2{
+    font-style: var(--font-primary);
+}
+
+
+#body .faq{
+    background: var(--blue-bg-accordian);
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+    
+}
+#body .nav-pills .nav-item button{
+    color: var(--grey-text);
+}
+#body .for_active > .active{
+    color: var(--blue-bg-secondary) !important;
+    background:var(--blue-bg-active-fill) !important ;
+}

@@ -1,0 +1,16 @@
+#body .pink_btn{
+    background: var(--btn-pink-bg);
+    color: var(--white);
+    }
+    #body .carousel-item{
+        font-family:  var(--font-primary);
+    }
+    .heart {
+        color: var(--btn-pink-bg);
+    }
+    
+    #body .grey_text{
+        color: var(--grey-text);
+        opacity: 0.8;
+        font-weight: 500;
+    }

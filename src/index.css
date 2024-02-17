@@ -8,12 +8,14 @@
     
     --blue-bg-primary:#273E87;
     --blue-bg-secondary:#4263C9;
+    --blue-bg-active-fill:#E7EBF8;
+    --blue-bg-accordian:#F1F5F5;
     
     --btn-pink-bg:#9A3C70;
     --rating-green:#039855;
 
-
-
-
-    --font-primary: "Inter"
+    --font-primary: "Inter";
+   
+    --grey-text:#808A9E;
+  
   }

@@ -6,7 +6,9 @@
     background-position: center;
     font-family: var(--font-primary);
 }
-
+.trending_para_span{
+    color: var(--blue-bg-secondary);
+}
 
 /* Extra small devices (phones, 500px and down) */
 @media all and (max-width: 500px) {

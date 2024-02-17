@@ -1,0 +1,25 @@
+#body .accordion-item{
+    border: 0 ;
+    background: var(--blue-bg-accordian);
+}
+#body .accordion-button{
+    background: var(--blue-bg-accordian);
+}
+ #accordionExample{
+    font-family: var(--font-primary);
+ }
+
+ #body .accordion-body{
+    color: var(--grey-text);
+ }
+
+ #body .accordion-button:not(.collapsed){
+    color: var(--black);
+ }
+
+#body .accordion-item, .accordion-item:focus, .accordion-item:active,
+.accordion-header, .accordion-header:focus, .accordion-header:active,
+.accordion-button, .accordion-button:focus, .accordion-button:active {
+     box-shadow: none !important;
+
+}

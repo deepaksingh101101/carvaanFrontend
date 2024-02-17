@@ -15,7 +15,7 @@ export default function Navbar() {
     return (
         <>
             {/* <nav className="px-5 navbar navbar-expand-lg  w-100 "  style={{ backgroundColor: theme.defaultTheme.palette.default.text}}> */}
-            <nav className="px-md-0 px-lg-0    navbar navbar-expand-lg position-fixed w-100 bg-transparent" style={{zIndex:"1"}} >
+            <nav className="px-md-0 px-lg-0    navbar navbar-expand-lg position-fixed w-100 bg-transparent" style={{zIndex:"1000"}} >
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/">
                         <img className='logo' src={FullLogo} style={{ width: '130px' }} alt="Carvaan" />
