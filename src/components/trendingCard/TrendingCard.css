@@ -1,0 +1,7 @@
+.trending{
+    font-family: var(--font-primary);
+}
+
+.trending .card-body .card-title{
+    color: var(--btn-pink-bg);
+}

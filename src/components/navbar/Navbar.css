@@ -1,7 +1,7 @@
 #body .navButton1{
-    background: white ;
-    color: #4263C9  !important;
+    background: var(--white) ;
+    color: var(--blue-bg-secondary)  !important;
 }
 #body .nav-link{
-    color: white;
+    color: var(--white);
 }

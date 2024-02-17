@@ -1,5 +1,5 @@
 import './Home.css';
-import SourceDestCard from '../../components/navbar/sourceDestCard/SourceDestCard';
+
 import TrendingCard from '../../components/trendingCard/TrendingCard';
 import goa from '../../assets/trending/goa.png'
 import andaman from '../../assets/trending/andaman.png'
@@ -74,7 +74,7 @@ const trendingCardData=[
 
   return (
     <>
-      <div className="container-fluid home_bg p-0 position-relative d-flex justify-content-center flex-column align-items-center" style={{ fontFamily: "Inter, sans-serif"}} >
+      <div className="container-fluid home_bg p-0 position-relative d-flex justify-content-center flex-column align-items-center"  >
         <div className="row me-0 d-flex justify-content-center">
           <div className="col-12 col-md-6  col-lg-9 ">
           <h1 className='text-light mt-5 pt-4 mx-4 fw-bold text-center'>Enjoy Your Dream Vacation</h1>

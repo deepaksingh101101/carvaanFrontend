@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-#body{
-    background: #F3F4F6;
-}
+:root {
+    --black: black;
+    --white: #ffffff;
+    --body-bg-primary:#F2F5FC;
+    --body-bg-secondary:#F3F4F6;
+    
+    --blue-bg-primary:#273E87;
+    --blue-bg-secondary:#4263C9;
+    
+    --btn-pink-bg:#9A3C70;
+    --rating-green:#039855;
+
+
+
+
+    --font-primary: "Inter"
+  }
