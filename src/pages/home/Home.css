@@ -1,0 +1,48 @@
+.home_bg{
+    background: url(../../assets//home//homebg.png);
+    min-height: 75vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Extra small devices (phones, 500px and down) */
+@media all and (max-width: 500px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media all and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media all and (max-width: 992px) {
+    #body nav{
+        backdrop-filter: blur(25px);
+    }
+    #body .home_bg{
+        min-height: 100vh;
+        padding-bottom: 15rem !important;
+    }
+    #body  .btnContainer{
+        padding-bottom: 100vh;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media all and (max-width: 1200px) {
+    /* Nav items */
+    #body .nav-link{
+        font-size:12px ;
+    }
+    /* Nav  buttons */
+    #body .res{
+        font-size: 12px ;
+    }
+    #body .logo{
+        width: 80px;
+    }
+  
+}
