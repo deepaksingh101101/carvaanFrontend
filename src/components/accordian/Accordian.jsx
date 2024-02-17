@@ -3,7 +3,7 @@ import './Accordian.css'
 export default function Accordian() {
   return (
     <>
-    <div className="accordion my-5 px-5" id="accordionExample">
+    <div className="accordion my-5" id="accordionExample">
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -16,6 +16,7 @@ export default function Accordian() {
       </div>
     </div>
   </div>
+  <hr className='mx-4'/>
   <div className="accordion-item">
     <h5 className="accordion-header">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -28,6 +29,7 @@ export default function Accordian() {
       </div>
     </div>
   </div>
+  <hr className='mx-4'/>
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -40,6 +42,7 @@ export default function Accordian() {
       </div>
     </div>
   </div>
+  <hr className='mx-4'/>
   <div className="accordion-item">
     <h2 className="accordion-header">
       <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">

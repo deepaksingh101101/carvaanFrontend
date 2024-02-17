@@ -1,0 +1,9 @@
+#prev,#next{
+    color: var(--black);
+}
+#body .prev_next{
+background: var(--white);
+border-radius: 50%;
+border: 1px solid #D0D5DD;
+;
+}

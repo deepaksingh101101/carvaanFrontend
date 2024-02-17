@@ -12,6 +12,12 @@ import paris from '../../assets/trending/paris.png'
 import Carausel from '../../components/carousel/Carausel';
 import Offer from '../../components/offers/Offer';
 import Faq from '../../components/faq/Faq';
+import aeroplane from '../../assets/home/areoplane.png'
+import { MdAirplanemodeActive } from "react-icons/md";
+import { IoWallet } from "react-icons/io5";
+import { MdSupportAgent } from "react-icons/md";
+import TrustCard from '../../components/trustCard/TrustCard';
+
 
 export default function Home() {
 
@@ -80,7 +86,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals1",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:goa
@@ -90,7 +96,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.2",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals2",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:ladakh
@@ -100,7 +106,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals3",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:andaman
@@ -110,7 +116,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals4",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:chilka
@@ -120,7 +126,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals5",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:goa2
@@ -130,7 +136,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals6",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:kerala
@@ -140,7 +146,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals7",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:melborn
@@ -150,7 +156,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals8",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:ladakh
@@ -160,7 +166,7 @@ const itinerariesData=[
     time:"7 Days 4 Night",
     rating:"4.6",
     review:"244",
-    title:"Dubai International special Flight Deals",
+    title:"Dubai International special Flight Deals9",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
     img:goa
@@ -204,8 +210,64 @@ const itinerariesData=[
 </div>
 
 <Offer/>
+<TrustCard/>
 
 <Faq/>
+
+{/* Why choose us? section */}
+
+
+<div className="container choose mb-5   ">
+  <div className="row">
+    <div className="col-lg-6">
+    {/* <img src={aeroplane} alt="Areoplane"/> */}
+    </div>
+    <div className=" col-lg-6 center d-flex flex-column ">
+<div className="my-3 center " style={{fontFamily:"Inter"}}>
+<h2 className='fw-bold'>Why <span className="trending_para_span">Choose </span>Us</h2>
+<p className='choose_color text-sm-center text-lg-start'>We are offering unbeatable prices and custom packages </p>
+</div>
+
+<div className="my-3">
+<div className="row mx-0 center  d-flex align-items-center ">
+  <div className=" col-lg-1 d-flex mb-2 mb-sm-2 mb-md-2 mb-lg-0 align-items-center justify-content-center" style={{background:"white",borderRadius:"10px",height:"60px",width:"60px"}}>
+  <MdAirplanemodeActive  className=' blue_icons ' fontSize={"40px"} />
+  </div>
+  <div className="center col-lg-10 px-md-0 px-lg-2 d-flex justify-content-between  flex-column">
+    <h5 className=''>Wide Range Option</h5>
+    <p className='choose_color mb-0'>Guaranteed the best prices for every booking </p>
+  </div>
+</div>
+</div>
+
+<div className="my-3">
+<div className="row mx-0 center d-flex align-items-center ">
+  <div className="col-lg-1  d-flex mb-2 mb-sm-2 mb-md-2 mb-lg-0 align-items-center justify-content-center" style={{background:"white",borderRadius:"10px",height:"60px",width:"60px"}}>
+  <IoWallet  className=' blue_icons ' fontSize={"40px"} />
+  </div>
+  <div className="col-lg-10 center px-md-0 px-lg-2 d-flex justify-content-between  flex-column">
+    <h5 className=''>Best Prices And Special Offers</h5>
+    <p className='choose_color mb-0'>Guaranteed the best prices for every booking </p>
+  </div>
+</div>
+</div>
+
+<div className="my-3">
+<div className="row mx-0 center d-flex align-items-center ">
+  <div className="col-lg-1 mb-2 mb-sm-2 mb-md-2 mb-lg-0 d-flex align-items-center px- justify-content-center" style={{background:"white",borderRadius:"10px",height:"60px",width:"60px"}}>
+  <MdSupportAgent  className=' blue_icons ' fontSize={"40px"} />
+  </div>
+  <div className="col-lg-10 center  px-md-0 px-lg-2 d-flex justify-content-between  flex-column">
+    <h5 className=''>24*7 Hours Customer Support</h5>
+    <p className='choose_color mb-0'>Guaranteed the best prices for every booking </p>
+  </div>
+</div>
+</div>
+
+
+    </div>
+  </div>
+</div>
     </>
   )
 }

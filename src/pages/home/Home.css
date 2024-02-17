@@ -32,6 +32,13 @@
     #body  .btnContainer{
         padding-bottom: 100vh;
     }
+
+    #body .center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -48,4 +55,18 @@
         width: 80px;
     }
   
+}
+
+
+/* choose */
+#body .choose_color{
+    color: var(--grey-text);
+}
+
+#body .choose{
+    font-family: var(--font-primary);
+}
+
+#body .blue_icons{
+    color: var(--blue-bg-secondary);
 }
