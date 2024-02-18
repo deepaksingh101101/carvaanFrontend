@@ -6,3 +6,17 @@
 .white{
     background: var(--white);
 }
+
+#body .top{
+    background: var(--body-bg-secondary);
+    font-family: var(--font-primary);
+    border-radius: 20px;
+}
+#body .rm_border button{
+     background: var(--blue-bg-secondary);
+    height: 85px;
+}
+
+/* #body .rm_border{
+    background: var(--blue-bg-secondary);
+} */

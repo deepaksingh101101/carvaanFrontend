@@ -18,11 +18,13 @@ import { IoWallet } from "react-icons/io5";
 import { MdSupportAgent } from "react-icons/md";
 import TrustCard from '../../components/trustCard/TrustCard';
 
+
 import blue_img1 from '../../assets/trust/blue_img1.jfif'
 import blue_img2 from '../../assets/trust/blue_img2.jfif'
 import blue_img3 from '../../assets/trust/blue_img3.jfif'
 import blue_img4 from '../../assets/trust/blue_img4.jfif'
 import TrustSection from '../../components/trustSection/TrustSection';
+import SourceDestCard from '../../components/sourceDestCard/SourceDestCard';
 export default function Home() {
 
 const trendingCardData=[
@@ -240,8 +242,15 @@ const trustCardDatas=[
         </div>
       </div>
 
+{/* 
+      <div style={{borderRadius:"8px",background:"white"}} className="container">
+      <SourceDestCard/>
+      </div> */}
 
-      {/* <SourceDestCard/> */}
+
+
+
+      
 <div className="container my-5" style={{fontFamily:"Inter"}}>
 <h2 className='text-center fw-bold'>Explore <span className="trending_para_span">Trending</span> Destination</h2>
 </div>
