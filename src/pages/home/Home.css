@@ -70,3 +70,15 @@
 #body .blue_icons{
     color: var(--blue-bg-secondary);
 }
+
+
+
+/* Trust section */
+#body .trust_section{
+background: var(--blue-bg-primary);
+color: var(--white);
+font-family: var(--font-primary);
+}
+#body .trust_section p{
+color: rgba(255, 255, 255, 0.76);
+}

@@ -18,7 +18,11 @@ import { IoWallet } from "react-icons/io5";
 import { MdSupportAgent } from "react-icons/md";
 import TrustCard from '../../components/trustCard/TrustCard';
 
-
+import blue_img1 from '../../assets/trust/blue_img1.jfif'
+import blue_img2 from '../../assets/trust/blue_img2.jfif'
+import blue_img3 from '../../assets/trust/blue_img3.jfif'
+import blue_img4 from '../../assets/trust/blue_img4.jfif'
+import TrustSection from '../../components/trustSection/TrustSection';
 export default function Home() {
 
 const trendingCardData=[
@@ -174,6 +178,56 @@ const itinerariesData=[
  
 ]
 
+const trustCardDatas=[
+  {
+    id:"1",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img1
+},
+  {
+    id:"2",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img2
+},
+  {
+    id:"3",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img3
+},
+  {
+    id:"4",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img4
+},
+  {
+    id:"5",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img4
+},
+  {
+    id:"6",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img3
+},
+  {
+    id:"7",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img2
+},
+  {
+    id:"8",
+    name:"Soumuyadip jana",
+    location:"kolkata",
+    profileImg:blue_img1
+},
+]
 
   return (
     <>
@@ -210,10 +264,6 @@ const itinerariesData=[
 </div>
 
 <Offer/>
-<TrustCard/>
-
-<Faq/>
-
 {/* Why choose us? section */}
 
 
@@ -268,6 +318,16 @@ const itinerariesData=[
     </div>
   </div>
 </div>
+
+<div className="container-fluid trust_section py-5">
+  <h2 className='text-center fw-bold '>Overs 1000+ People Trust Us</h2>
+  <p className='text-center mt-4'>Carvaan support our Travelers from all aspects</p>
+<TrustSection trustCardDatas={trustCardDatas}/>
+</div>
+
+<Faq/>
+
+
     </>
   )
 }

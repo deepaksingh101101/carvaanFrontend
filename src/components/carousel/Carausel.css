@@ -1,9 +1,13 @@
 #prev,#next{
-    color: var(--black);
+    color: var(--blue-bg-primary);
 }
 #body .prev_next{
 background: var(--white);
 border-radius: 50%;
 border: 1px solid #D0D5DD;
-;
+}
+#body #iNext span, #iPrev span{
+    height: 35px;
+    width: 35px;
+
 }

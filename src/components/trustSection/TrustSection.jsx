@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import ItiCard from "../itiCard/ItiCard";
-import "./Carausel.css";
+import TrustCard from '../trustCard/TrustCard'
+import { useState, useEffect } from 'react';
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
+import '../carousel/Carausel'
+import './TrustSection.css'
 
-export default function Carausel({ itinerariesData }) {
+
+export default function TrustSection({ trustCardDatas }) {
   const [chunkSize, setChunkSize] = useState(4);
 
   useEffect(() => {
@@ -15,7 +17,7 @@ export default function Carausel({ itinerariesData }) {
       } else if (screenWidth >= 991) {
         setChunkSize(3);
       }
-      else if (screenWidth >= 768){
+      else if (screenWidth >= 768) {
         setChunkSize(2);
       }
       else {
@@ -45,33 +47,36 @@ export default function Carausel({ itinerariesData }) {
   };
 
   // Chunk the itinerariesData array into groups based on chunkSize
-  const chunkedItineraries = chunkArray(itinerariesData, chunkSize);
+  const chunkedTrustCardDatas = chunkArray(trustCardDatas, chunkSize);
 
   return (
     <>
-      <div id="carouselExample" className="carousel slide">
+      <div id="carouselExample2" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
-        <button style={{opacity:"1"}} id='iPrev' className="carousel-control-prev justify-content-md-start" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span className="prev_next d-flex align-items-center justify-content-center " aria-hidden="true"><GrPrevious className='' id='prev' /></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-          {chunkedItineraries.map((chunk, index) => (
+          {chunkedTrustCardDatas.map((chunk, index) => (
             <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
               <div className="container d-flex flex-wrap align-items-center justify-content-center justify-content-sm-center  justify-content-md-between justify-content-lg-between">
-                {chunk.map((itinerary, i) => (
-                  <ItiCard key={i} {...itinerary} />
+                {chunk.map((trust, i) => (
+                  <TrustCard key={i} {...trust} />
                 ))}
               </div>
             </div>
           ))}
-          <button id='iNext' style={{opacity:"1"}} className="ms-4 carousel-control-next justify-content-end" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span className="prev_next d-flex align-items-center justify-content-center " id="" aria-hidden="true"><GrNext id="next" /></span>
-          <span className="visually-hidden">Next</span>
-        </button>
         </div>
-       
-        
+      <div className="d-flex mt-4  justify-content-center align-items-center">
+      <button className="next mx-3 " type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+            <span className="prev_span" aria-hidden="true"><GrPrevious /></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <p className='my-0'>4 of 12</p>
+      <button className="prev mx-3" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+            <span className="next_span" aria-hidden="true"><GrNext /></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+         
+          
       </div>
+      </div> 
     </>
-  );
+  )
 }

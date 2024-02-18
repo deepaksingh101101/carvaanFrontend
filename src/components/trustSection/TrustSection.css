@@ -1,0 +1,9 @@
+#body .prev, .next {
+border-radius: 50% !important;
+stroke: var(--Gray-300, #D0D5DD);
+height: 40px;
+width: 40px;
+}
+#body .prev_span, .next_span{
+    color: var(--blue-bg-primary);
+}

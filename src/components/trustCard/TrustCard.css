@@ -1,3 +1,19 @@
 #body .trust{
     color: white;
+    position: relative;
+    border-radius: 12px;
 }
+#body #trust_img{
+    min-height: 460px;
+    background: linear-gradient(180deg, rgba(17, 17, 17, 0.00) 50%, #111 114.11%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    border-radius: 12px;
+}
+/* #body #trust_img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; 
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+  } */

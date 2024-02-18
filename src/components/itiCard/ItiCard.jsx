@@ -3,7 +3,7 @@ import { MdOutlineStar } from "react-icons/md";
 import { IoHeartCircleOutline } from "react-icons/io5";
 import './ItiCard.css';
 
-export default function ItiCard({ id, time, rating, review, title, originalPrice, discountPrice, img }) {
+export default function ItiCard({ id, time, rating, review, title, orignalPrice, discountPrice, img }) {
   return (
     <div className="card px-2" style={{ width: "18rem" }}>
       <img
@@ -15,7 +15,7 @@ export default function ItiCard({ id, time, rating, review, title, originalPrice
       <div className="card-body p-0">
         <div className="d-flex mt-2 justify-content-between" style={{ fontSize: "13px" }}>
           <p className="grey_text">{time}</p>
-          <p className="f-flex align-items-center justify-content-center">
+          <p className="d-flex align-items-center justify-content-center">
             <span className="fw-bold me-1 " style={{ color: "green" }}>
               <MdOutlineStar className="mb-1 " style={{ color: "green" }} />
               {rating}
@@ -28,7 +28,7 @@ export default function ItiCard({ id, time, rating, review, title, originalPrice
         </h6>
         <div className="d-flex" style={{ fontSize: "13px" }}>
           <p>
-            <s className="grey_text">{originalPrice}</s>
+            <s className="grey_text">{orignalPrice}</s>
           </p>
           <p className="ms-2">
             <span>
