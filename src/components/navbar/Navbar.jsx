@@ -1,21 +1,36 @@
 import './Navbar.css';
 import FullLogo from '../../assets/home/CarvaanLogo.png';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { useTheme } from '../../themes/ThemeContext';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
     const [btnActive, setBtnActive] = useState('btn2');
+    const [scrolled, setScrolled] = useState(false);
 
     const handleBtnClick = (btn) => {
         setBtnActive(btn);
     };
-    const theme = useTheme();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if (offset > 100) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <>
-            {/* <nav className="px-5 navbar navbar-expand-lg  w-100 "  style={{ backgroundColor: theme.defaultTheme.palette.default.text}}> */}
-            <nav className="px-md-0 px-lg-0    navbar navbar-expand-lg position-fixed w-100 bg-transparent" style={{zIndex:"1000"}} >
+<nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100 transparent" style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}>
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/">
                         <img className='logo' src={FullLogo} style={{ width: '130px' }} alt="Carvaan" />
@@ -53,7 +68,7 @@ export default function Navbar() {
                                 >
                                     Special Deals
                                 </Link>
-                                <ul className="dropdown-menu">
+                                <ul className="dropdown-menu border-0">
                                     <li>
                                         <Link className="dropdown-item" to="#">
                                             Action
@@ -65,7 +80,7 @@ export default function Navbar() {
                                         </Link>
                                     </li>
                                     <li>
-                                        <hr className="dropdown-divider" />
+                                        {/* <hr className="dropdown-divider" /> */}
                                     </li>
                                     <li>
                                         <Link className="dropdown-item" to="#">
@@ -80,21 +95,23 @@ export default function Navbar() {
                                 </Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link  " to="#">
+                                <Link className="nav-link  " to="/about">
                                     About Us
                                 </Link>
                             </li>
                         </ul>
-                        <div className="d-flex btnContainer"  role="search">
+                        <div className="d-flex btnContainer flex-wrap " role="search">
                             <button
-                                className={`text-white res btn me-2 fw-bold  ${btnActive === 'btn1' ? 'navButton1' : ' '}`}
+                                type='button'
+                                className={`text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
                                 style={{ border: 0 }}
                                 onMouseEnter={() => handleBtnClick('btn1')}
+                                data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
                             >
                                 Login Or Sign up
                             </button>
                             <button
-                                className={` text-white res btn me-2 fw-bold  ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
+                                className={` text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
                                 style={{ border: 0 }}
                                 onMouseEnter={() => handleBtnClick('btn2')}
                             >

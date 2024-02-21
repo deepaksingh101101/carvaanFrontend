@@ -5,12 +5,14 @@
 
 .white{
     background: var(--white);
+    padding: 13px 0;
 }
 
 #body .top{
     background: var(--body-bg-secondary);
     font-family: var(--font-primary);
-    border-radius: 20px;
+    border-radius: 8px;
+    width: 24%;
 }
 #body .rm_border button{
      background: var(--blue-bg-secondary);
@@ -20,3 +22,68 @@
 /* #body .rm_border{
     background: var(--blue-bg-secondary);
 } */
+
+
+
+.container.overflow-y-auto::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for webkit browsers */
+  }
+  
+  .container.overflow-y-auto {
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
+
+  #body .locationInput{
+    outline: none;
+  }
+
+  #body .from_box{
+    border-radius: 8px;
+    height: 370px;
+    z-index: 10;
+    background: var(--body-bg-secondary);
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 0px 1px; */
+    box-shadow: rgba(17, 17, 26, 0.1) -4px 15px 20px;
+    border-top: 0;
+  }
+ 
+
+  #body .from_box input{
+    background: var(--body-bg-secondary);
+  }
+
+ 
+#body .blue_secondary {
+    color: var(--blue-bg-secondary);
+}
+
+
+.travelers_count{
+    background-color: var(--white);
+}
+
+ #body .total_icons{
+    font-size: 30px;
+    color: var(--blue-bg-secondary);
+ }
+
+ #body .error_color{
+    color: var(--Error-600);
+ }
+
+ #body .bottom h4{
+font-size: clamp(12px, 1.5vw, 32px) ;
+ }
+
+
+
+  #body .white div h6{
+    font-size: clamp(12px, 1.1vw, 32px) ;
+  }
+
+ @media all and (max-width: 992px) {
+  #body .top {
+width: 48% !important;
+
+  }
+ }

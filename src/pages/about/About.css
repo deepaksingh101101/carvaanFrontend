@@ -1,0 +1,43 @@
+#body .our_story{
+background: linear-gradient(96deg, #364697 3.3%, #AE4A84 95.64%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+#body .our_story_p{
+    color:  var(--btn-pink-secondary) ;
+    font-family: var(--font-primary);
+    font-size: 18px;
+    
+}
+   
+#body .about_img{
+    object-fit: cover;
+    max-width: -webkit-fill-available;
+    max-height:500px;
+}
+
+
+
+#body .get_in_touch{
+    background:  #EAEFFA;
+    border-top-left-radius: 100px;
+    /* border-top-right-radius: 100px; */
+    border-bottom-left-radius: 20px;
+    border-bottom-left-radius: 20;
+}
+#body .get_in_touch h2{
+  font-family:var(--font-primary);
+  color:  #5E6282;
+}
+
+#body .contact_btn{
+border-radius: 10.12px;
+border: 3.036px solid #3C54B9;
+background: linear-gradient(180deg, #4263C9 0%, #364697 100%);
+box-shadow: 0px 0.899px 3.598px 0.899px rgba(66, 99, 201, 0.12), 0px 2.698px 2.923px -1.349px rgba(66, 99, 201, 0.25), 0px 0px 0.225px 0.675px rgba(66, 99, 201, 0.05), 0px 0px 0.225px 0.225px rgba(66, 99, 201, 0.07);
+
+color: var(--white);
+padding: 21px 84px;
+font-family: var(--font-primary);
+}

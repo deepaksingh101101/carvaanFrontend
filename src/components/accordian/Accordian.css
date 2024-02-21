@@ -23,3 +23,17 @@
      box-shadow: none !important;
 
 }
+
+
+#body .accordion-button h5,button span{
+   font-size: clamp(12px, 1.5vw, 32px) ;
+}
+
+#body .accordion-body {
+
+   font-size: clamp(12px, 1.1vw, 32px) ;
+}
+
+#body .accordion-button span{
+
+}

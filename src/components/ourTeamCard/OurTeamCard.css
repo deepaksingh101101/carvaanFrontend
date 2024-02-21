@@ -1,0 +1,23 @@
+.teamPic{
+    object-fit: cover;
+    height: 230px;
+}
+
+.about_card{
+   font-family: var(--font-primary); 
+}
+#body .job {
+    color: var(--primary-text-color);
+}
+
+#body .social_icons{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#body .social_icons:hover{
+    transform: scale(1.2);
+}
+#body .mail:hover{
+    transform: scale(1.4) !important;
+}

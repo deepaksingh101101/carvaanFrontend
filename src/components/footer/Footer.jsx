@@ -1,9 +1,9 @@
-import React from 'react'
+
 import './footer.css'
 import logo from '../../assets/home/CarvaanLogo.png'
 const Footer = () => {
     return (
-        <div className="Footer">
+        <div className="Footer w-100" >
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-lg-4 col-12 ft-1 mt-3">

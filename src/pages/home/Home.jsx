@@ -23,6 +23,7 @@ import blue_img1 from '../../assets/trust/blue_img1.jfif'
 import blue_img2 from '../../assets/trust/blue_img2.jfif'
 import blue_img3 from '../../assets/trust/blue_img3.jfif'
 import blue_img4 from '../../assets/trust/blue_img4.jfif'
+import trust_left from '../../assets/home/trust_left.png'
 import TrustSection from '../../components/trustSection/TrustSection';
 import SourceDestCard from '../../components/sourceDestCard/SourceDestCard';
 export default function Home() {
@@ -233,7 +234,7 @@ const trustCardDatas=[
 
   return (
     <>
-      <div className="container-fluid home_bg p-0 position-relative d-flex justify-content-center flex-column align-items-center"  >
+      <div className="container-fluid home_bg p-0  d-flex justify-content-center flex-column align-items-center"  >
         <div className="row me-0 d-flex justify-content-center">
           <div className="col-12 col-md-6  col-lg-9 ">
           <h1 className='text-light mt-5 pt-4 mx-4 fw-bold text-center'>Enjoy Your Dream Vacation</h1>
@@ -242,10 +243,12 @@ const trustCardDatas=[
         </div>
       </div>
 
-{/* 
+
       <div style={{borderRadius:"8px",background:"white"}} className="container">
       <SourceDestCard/>
-      </div> */}
+      </div>
+
+
 
 
 
@@ -278,10 +281,11 @@ const trustCardDatas=[
 
 <div className="container choose mb-5   ">
   <div className="row">
-    <div className="col-lg-6">
-    {/* <img src={aeroplane} alt="Areoplane"/> */}
+    <div className="col-lg-6 trust_left d-none d-sm-none d-md-none d-lg-block">
+    <img src={trust_left} width='100%'  alt=""  />
+    
     </div>
-    <div className=" col-lg-6 center d-flex flex-column ">
+    <div className=" col-lg-6 mt-5 center d-flex flex-column ">
 <div className="my-3 center " style={{fontFamily:"Inter"}}>
 <h2 className='fw-bold'>Why <span className="trending_para_span">Choose </span>Us</h2>
 <p className='choose_color text-sm-center text-lg-start'>We are offering unbeatable prices and custom packages </p>
