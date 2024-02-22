@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import './OtpBox.css';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import { postApi } from '../../helpers/requestHelpers';
 
 export default function OtpBox({ userEmail }) {
+  const navigate = useNavigate();
   const [otp, setOtp] = useState(['', '', '', '', '', '']); // Initialize state with an array of 6 empty strings
   const inputsRef = useRef([]);
 const [showOtpError, setShowOtpError] = useState(false)
@@ -13,6 +14,7 @@ const [showOtpError, setShowOtpError] = useState(false)
     inputsRef.current[0].focus();
   }, []);
 
+  
   // Function to handle changes in the OTP input fields
   const handleOtpChange = (index, value) => {
     const newOtp = [...otp]; // Create a copy of the OTP array
@@ -40,7 +42,12 @@ const [showOtpError, setShowOtpError] = useState(false)
       setShowOtpError(false);
       try {
         const response = await postApi("post", "/users/verify_otp", { email: userEmail, otp: otpString, remember: true });
-        console.log(response);
+        if(response){
+          localStorage.setItem("accessToken",response.data.accessToken)
+          localStorage.setItem("refreshToken",response.data.refreshToken)
+          navigate('/')
+          
+        }
       } catch (error) {
         console.error("Error sending OTP:", error);
       }

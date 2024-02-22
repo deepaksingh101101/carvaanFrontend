@@ -12,8 +12,9 @@ export default function LoginModal() {
 const [userEmail, setUserEmail] = useState("");
 const [showOtpBox, setShowOtpBox] = useState(false);
 const [showEmailInputError,setShowEmailInputError]= useState(false);
-
+const[sendBtnContent,setSendBtnContent]=useState("Send Otp");
 const handleSendOtp =  (e) => {
+  setSendBtnContent("Resend Otp")
   e.preventDefault();
   if (userEmail.length === 0) {
     setShowEmailInputError(true);
@@ -62,7 +63,7 @@ const handleSendOtp =  (e) => {
 
   <br/>
 <div className="d-flex px-2">
-  <button  className='w-100 my-2 btn btn-primary   ' onClick={handleSendOtp}  ><span className='send_otp_btn'>Send Otp</span></button>
+  <button  className='w-100 my-2 btn btn-primary   ' onClick={handleSendOtp}  ><span className='send_otp_btn'>{sendBtnContent}</span></button>
 </div>
   {/* need to be changed */}
   {/* <div className="mb-3">
