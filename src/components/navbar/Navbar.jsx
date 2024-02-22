@@ -3,7 +3,7 @@ import FullLogo from '../../assets/home/CarvaanLogo.png';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-export default function Navbar() {
+export default function Navbar(props) {
     const [btnActive, setBtnActive] = useState('btn2');
     const [scrolled, setScrolled] = useState(false);
 
@@ -30,7 +30,9 @@ export default function Navbar() {
 
     return (
         <>
-<nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100 transparent" style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}>
+{/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed  w-100 " style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}> */}
+{/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: props.bg ? props.bg : "#13182F" }}> */}
+<nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ?"#13182F"  : props.bg}}>
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/">
                         <img className='logo' src={FullLogo} style={{ width: '130px' }} alt="Carvaan" />
