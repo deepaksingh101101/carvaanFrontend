@@ -11,6 +11,7 @@ export default function ItiCard({ time, rating, review, title, orignalPrice, dis
         className="card-img-top mt-2"
         alt="..."
         style={{ height: "230px" }}
+        loading='lazy'
       />
       <div className="card-body p-0">
         <div className="d-flex mt-2 justify-content-between" style={{ fontSize: "13px" }}>
