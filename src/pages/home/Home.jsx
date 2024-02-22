@@ -18,7 +18,7 @@ import { IoWallet } from "react-icons/io5";
 import { MdSupportAgent } from "react-icons/md";
 import TrustCard from '../../components/trustCard/TrustCard';
 
-
+import Navbar from '../../components/navbar/Navbar'
 import blue_img1 from '../../assets/trust/blue_img1.jfif'
 import blue_img2 from '../../assets/trust/blue_img2.jfif'
 import blue_img3 from '../../assets/trust/blue_img3.jfif'
@@ -234,6 +234,7 @@ const trustCardDatas=[
 
   return (
     <>
+    <Navbar bg={"transparent"}/>
       <div className="container-fluid home_bg p-0  d-flex justify-content-center flex-column align-items-center"  >
         <div className="row me-0 d-flex justify-content-center">
           <div className="col-12 col-md-6  col-lg-9 ">
