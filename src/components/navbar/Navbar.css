@@ -42,3 +42,6 @@
 
 
 
+#body .text_white{
+    color: var(--white);
+}

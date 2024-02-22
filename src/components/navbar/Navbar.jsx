@@ -1,15 +1,27 @@
 import './Navbar.css';
 import FullLogo from '../../assets/home/CarvaanLogo.png';
+import avtar from '../../assets/profile/avtar.png'
 import { Link } from 'react-router-dom';
+import { IoIosArrowDown } from "react-icons/io";
+
 import { useState, useEffect } from 'react';
 
 export default function Navbar(props) {
     const [btnActive, setBtnActive] = useState('btn2');
     const [scrolled, setScrolled] = useState(false);
+    const [hasLocalStorage, setHasLocalStorage] = useState(false);
+
+
 
     const handleBtnClick = (btn) => {
         setBtnActive(btn);
     };
+
+    useEffect(() => {
+    if(localStorage.getItem("accessToken")){
+        setHasLocalStorage(true)
+    }
+    }, [hasLocalStorage])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -103,7 +115,23 @@ export default function Navbar(props) {
                             </li>
                         </ul>
                         <div className="d-flex btnContainer flex-wrap " role="search">
-                            <button
+                            
+
+                          
+
+{
+    hasLocalStorage?(  <div className="d-flex justify-content-between align-items-center me-4">
+    <img className='' style={{width:"40px",height:"40px",borderRadius:"50%"}} src={avtar} alt='profile'/>
+    <button
+        type='button'
+        className={`text_white res btn  fw-bold my-1`}
+        style={{ border: 0 }}
+    >
+        <span className='d-none d-lg-block' >My</span> Profile
+    </button>
+    <IoIosArrowDown className='text_white' />
+
+    </div>):(<button
                                 type='button'
                                 className={`text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
                                 style={{ border: 0 }}
@@ -111,9 +139,11 @@ export default function Navbar(props) {
                                 data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
                             >
                                 Login Or Sign up
-                            </button>
+                            </button>)
+}
+
                             <button
-                                className={` text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
+                                className={` text-white res btn me-2 fw-bold my-3 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
                                 style={{ border: 0 }}
                                 onMouseEnter={() => handleBtnClick('btn2')}
                             >
