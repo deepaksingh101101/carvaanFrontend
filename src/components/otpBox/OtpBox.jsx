@@ -10,6 +10,8 @@ export default function OtpBox({ userEmail }) {
   const inputsRef = useRef([]);
 const [showOtpError, setShowOtpError] = useState(false)
 
+
+
   useEffect(() => {
     inputsRef.current[0].focus();
   }, []);
@@ -45,8 +47,8 @@ const [showOtpError, setShowOtpError] = useState(false)
         if(response){
           localStorage.setItem("accessToken",response.data.accessToken)
           localStorage.setItem("refreshToken",response.data.refreshToken)
-          navigate('/')
           
+          navigate('/about')
         }
       } catch (error) {
         console.error("Error sending OTP:", error);
@@ -96,7 +98,7 @@ const [showOtpError, setShowOtpError] = useState(false)
           <ErrorMessage message="Please Enter Otp"/>
         ):("")
       }
-      <button className='btn my-3 w-100 btn-primary' onClick={handleSubmitOtp}>Verify Me</button>
+      <button className='btn my-3 w-100 btn-primary  '  onClick={handleSubmitOtp}>Verify Me</button>
     </section>
   );
 }
