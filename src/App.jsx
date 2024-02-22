@@ -17,7 +17,7 @@ function App() {
 
 
      <BrowserRouter>
-     <Navbar/>
+     {/* <Navbar/> */}
      <LoginModal/>
       <Routes>
         <Route path="/" element={<Home />}/>
