@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from "axios";
 import './OtpBox.css';
+import ErrorMessage from '../errorMessage/ErrorMessage';
+import { postApi } from '../../helpers/requestHelpers';
 
 export default function OtpBox({ userEmail }) {
   const [otp, setOtp] = useState(['', '', '', '', '', '']); // Initialize state with an array of 6 empty strings
   const inputsRef = useRef([]);
+const [showOtpError, setShowOtpError] = useState(false)
 
   useEffect(() => {
     inputsRef.current[0].focus();
@@ -27,19 +30,23 @@ export default function OtpBox({ userEmail }) {
     return otp.join('');
   };
 
-  const handleSubmitOtp = (e) => {
+  const handleSubmitOtp = async (e) => {
     e.preventDefault();
     const otpString = getOtpAsString(); // Convert OTP array to string
   
-    axios.post("https://fb7b-103-16-69-133.ngrok-free.app/users/verify_otp", {
-      email: userEmail,
-      otp: otpString,
-      remember: true
-    })
-    .then((response) => {
-      console.log(response);
-    });
+    if (otpString.length < 6) {
+      setShowOtpError(true);
+    } else {
+      setShowOtpError(false);
+      try {
+        const response = await postApi("post", "/users/verify_otp", { email: userEmail, otp: otpString, remember: true });
+        console.log(response);
+      } catch (error) {
+        console.error("Error sending OTP:", error);
+      }
+    }
   };
+  
 
   const handleKeyUp = (index, e) => {
     if (e.key === 'Backspace' && index > 0 && otp[index] === '') {
@@ -77,6 +84,11 @@ export default function OtpBox({ userEmail }) {
           />
         ))}
       </div>
+      {
+        showOtpError?(
+          <ErrorMessage message="Please Enter Otp"/>
+        ):("")
+      }
       <button className='btn my-3 w-100 btn-primary' onClick={handleSubmitOtp}>Verify Me</button>
     </section>
   );

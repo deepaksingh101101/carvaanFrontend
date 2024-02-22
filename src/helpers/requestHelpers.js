@@ -2,8 +2,8 @@ import  axios  from "axios";
 
 
 const api=axios.create({
-    baseURL:"https://fb7b-103-16-69-133.ngrok-free.app",
-    timeout:1000,
+    baseURL:"https://eb80-103-16-69-133.ngrok-free.app",
+    timeout:5000,
     headers:{'X-Custom_Header':'foobar'}
 })
 
@@ -13,19 +13,18 @@ const getApi=()=>{
 
 }
 
-export  const   postApi=(method,url,data)=>{
-    console.log("PostApi called")
-    api({
-        method: method,
-        url: url,
-        data: data
-      }).then((response) => {
-        return response;
-          }).catch((error)=>{
-                return error;
-          })
-}
-
+export const postApi = (method, url, data) => {
+    return api({
+      method: method,
+      url: url,
+      data: data
+    }).then((response) => {
+      return response;
+    }).catch((error) => {
+      return error;
+    });
+  }
+  
 const deleteApi=()=>{
 
 }
