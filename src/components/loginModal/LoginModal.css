@@ -51,3 +51,8 @@ border: 1px solid #E0E0E0;
     font-family: 'SF Pro Display'
   }
 
+
+  #body .send_otp_btn {
+  font-family: var(--font-primary) ;
+  font-size:15px;
+  }

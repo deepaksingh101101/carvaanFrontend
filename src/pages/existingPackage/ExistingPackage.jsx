@@ -9,14 +9,17 @@ import ep8 from '../../assets/existingPackage/ep8.jfif'
 import ep9 from '../../assets/existingPackage/ep9.jfif'
 import ep10 from '../../assets/existingPackage/ep10.jfif'
 import './ExistingPackage.css'
+import { IoIosSearch } from "react-icons/io";
+
 
 export default function ExistingPackage() {
   return (
     <>
     <div className="container d-flex  justify-content-center my-5">
-    <form className="d-flex py-3 px-3 existing_search justify-content-between " style={{minWidth:"40%"}} role="search">
-        <input className=" me-2 border-0 w-100 " type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn existing_search_btn" type="submit">Search</button>
+    <form className="d-flex py-2 px-3 existing_search justify-content-between align-items-center " style={{minWidth:"40%"}} role="search">
+    <IoIosSearch className='me-2' style={{fontSize:"30px"}} />
+        <input className=" me-2  border-0 w-100 " type="search" placeholder="Search" aria-label="Search"/>
+        <button className="btn existing_search_btn px-4 py-2 " type="submit">Search</button>
       </form>
     </div>
     </>

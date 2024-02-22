@@ -7,8 +7,15 @@ background: #FFF; */
     background: var(--white);
     border-radius: 100px;
 
+
 }
 
-.existing_search_btn{
-    
+input:focus,:active{
+    outline: none !important;
+}
+
+#body .existing_search_btn{
+    background: var(--blue-bg-secondary) ;
+    color: var(--white);
+    border-radius: 20px;
 }

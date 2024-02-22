@@ -1,0 +1,8 @@
+#body .otp_input{
+  max-width: 30px;
+  padding: 0;
+}
+
+#body .inter{
+  font-family: var(--font-primary);
+}
