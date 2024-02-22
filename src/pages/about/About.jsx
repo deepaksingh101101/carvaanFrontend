@@ -69,7 +69,7 @@ export default function About() {
 </div>
 
 <div className="d-flex justify-content-center">
-<iframe height="fit-content" width='100%' src="https://www.youtube.com/embed/mI7cq4uHCZ4" frameborder="0" allowfullscreen></iframe>
+<iframe height="fit-content" width='100%' src="https://www.youtube.com/embed/mI7cq4uHCZ4" ></iframe>
 
 </div>
 {/* <video  controls>

@@ -8,36 +8,37 @@ export default function OtpBox({ userEmail }) {
   const navigate = useNavigate();
   const [otp, setOtp] = useState(['', '', '', '', '', '']); // Initialize state with an array of 6 empty strings
   const inputsRef = useRef([]);
-const [showOtpError, setShowOtpError] = useState(false)
-
-
+  const [showOtpError, setShowOtpError] = useState(false);
+  const [isDataBsAdded, setIsDataBsAdded] = useState(false);
 
   useEffect(() => {
     inputsRef.current[0].focus();
   }, []);
 
-  
-  // Function to handle changes in the OTP input fields
-  const handleOtpChange = (index, value) => {
-    const newOtp = [...otp]; // Create a copy of the OTP array
-    newOtp[index] = value; // Update the value at the specified index
-    setOtp(newOtp); // Update the state with the new OTP array
+  useEffect(() => {
+    if (isDataBsAdded) {
+      document.getElementById('verifyButton').click();
+    }
+  }, [isDataBsAdded]);
 
-    // Handle focus on next input
+  const handleOtpChange = (index, value) => {
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+
     if (value !== '' && index < otp.length - 1) {
       inputsRef.current[index + 1].focus();
     }
   };
 
-  // Function to convert the OTP array to a single string
   const getOtpAsString = () => {
     return otp.join('');
   };
 
   const handleSubmitOtp = async (e) => {
     e.preventDefault();
-    const otpString = getOtpAsString(); // Convert OTP array to string
-  
+    const otpString = getOtpAsString();
+
     if (otpString.length < 6) {
       setShowOtpError(true);
     } else {
@@ -47,8 +48,8 @@ const [showOtpError, setShowOtpError] = useState(false)
         if(response){
           localStorage.setItem("accessToken",response.data.accessToken)
           localStorage.setItem("refreshToken",response.data.refreshToken)
-          
-          navigate('/about')
+          setIsDataBsAdded(true)
+          navigate('/')
         }
       } catch (error) {
         console.error("Error sending OTP:", error);
@@ -56,7 +57,6 @@ const [showOtpError, setShowOtpError] = useState(false)
     }
   };
   
-
   const handleKeyUp = (index, e) => {
     if (e.key === 'Backspace' && index > 0 && otp[index] === '') {
       inputsRef.current[index - 1].focus();
@@ -84,7 +84,7 @@ const [showOtpError, setShowOtpError] = useState(false)
             key={index}
             type="text"
             className="otp_input mx-1 text-center"
-            maxLength={1} // Set maximum length of each input field to 1
+            maxLength={1}
             value={value}
             onChange={(e) => handleOtpChange(index, e.target.value)}
             onPaste={handlePaste}
@@ -93,12 +93,17 @@ const [showOtpError, setShowOtpError] = useState(false)
           />
         ))}
       </div>
-      {
-        showOtpError?(
-          <ErrorMessage message="Please Enter Otp"/>
-        ):("")
-      }
-      <button className='btn my-3 w-100 btn-primary  '  onClick={handleSubmitOtp}>Verify Me</button>
+      {showOtpError ? (
+        <ErrorMessage message="Please Enter Otp" />
+      ) : null}
+      <button
+        id="verifyButton"
+        className='btn my-3 w-100 btn-primary'
+        data-bs-dismiss={isDataBsAdded ? "modal" : ""}
+        onClick={handleSubmitOtp}
+      >
+        Verify Me
+      </button>
     </section>
   );
 }
