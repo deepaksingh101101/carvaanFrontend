@@ -7,7 +7,7 @@ import team3 from '../../assets/about/team3.jfif'
 import team4 from '../../assets/about/team4.jfif'
 import team5 from '../../assets/about/team5.jfif'
 import team6 from '../../assets/about/team6.jfif'
-import arraow from '../../assets/about/getintouch.png'
+import share from '../../assets/about/share.svg'
 
 export default function About() {
 
@@ -68,7 +68,13 @@ export default function About() {
 <h2 className='text-center fw-bold'> <span className="trending_para_span">Founder</span> Message</h2>
 </div>
 
-<iframe style={{minHeight:"600px"}} src="https://www.youtube.com/embed/mI7cq4uHCZ4" frameborder="0" allowfullscreen></iframe>
+<div className="d-flex justify-content-center">
+<iframe height="fit-content" width='100%' src="https://www.youtube.com/embed/mI7cq4uHCZ4" frameborder="0" allowfullscreen></iframe>
+
+</div>
+{/* <video  controls>
+  <source src="https://www.youtube.com/embed/mI7cq4uHCZ4" type="video/mp4"/>
+</video> */}
 
 
 <div className="container mt-5 mb-4" style={{fontFamily:"Inter"}}>
@@ -82,23 +88,27 @@ export default function About() {
     </div>
 
 
-<div className="container my-5 get_in_touch d-flex flex-column justify-content-center">
-<h2 className='text-center fw-bold mt-4 px-5 px-lg-0' >Get In Touch To Reach Out Today For 
-</h2>
-<h2 className='text-center fw-bold'>Exciting Opportunities!</h2>
-<div className="d-flex  justify-content-center  my-5">
-<button  className=" btn mb-5 contact_btn  fw-semibold">
-Contact With Us
-</button>
-</div>
-
-</div>
-
 
 
 
 
 </div>
+
+<div className="container d-flex my-5 justify-content-center get_in_touch d-flex flex-column justify-content-center position-relative">
+  <img src={share} className="position-absolute d-none d-sm-none d-md-block d-lg-block end-0 top-0" style={{marginTop: "-10px", marginRight: "-10px" }} width="50" alt=""/>
+  
+  <h2 className='text-center fw-bold mt-4 px-5 px-lg-0' >Get In Touch To Reach Out Today For 
+  </h2>
+  <h2 className='text-center fw-bold'>Exciting Opportunities!</h2>
+  <div className="d-flex justify-content-center my-5">
+    <button className="btn mb-2 mb-lg-5 p-5 px-sm-5 px-md-5 px-lg-5 py-3  contact_btn  fw-semibold">
+      Contact With Us
+    </button>
+  </div>
+</div>
+
+
+
 
 
 </>
