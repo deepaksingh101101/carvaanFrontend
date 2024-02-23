@@ -12,7 +12,7 @@ border: 1px solid #D0D5DD;
 
 }
 
-#body .gradient-overlay{
+#body .gradient-overlay,.gradient-overlay2{
     position: absolute;
   top: 0;
   right: 0;
@@ -25,3 +25,13 @@ border: 1px solid #D0D5DD;
   );
   width: 30vw;
   margin-left: auto;}
+
+#body .gradient-overlay2{
+  background: linear-gradient(
+    to left,
+    rgb(242 245 252 / 2%) 0%,
+    rgb(242 245 252) 100%
+  );
+  margin-left: 0;
+  width: 15vw;
+}

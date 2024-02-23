@@ -37,6 +37,7 @@ import './ExistingPackage.css'
 import { IoIosSearch } from "react-icons/io";
 import PackagesCard from '../../components/packagesCard/PackagesCard'
 import Navbar from '../../components/navbar/Navbar'
+import ExistingPackageCarausel from '../../components/existingPackageCarausel/ExistingPackageCarausel'
 const domesticCardData=[{
   id:1,
   destination:"Rome, Italy",
@@ -202,37 +203,46 @@ const itinerariesData=[
 export default function ExistingPackage() {
   return (
     <>
-    <Navbar bg={"#13182F"}/>
-    <div className="container mt-5 pt-4 d-flex  justify-content-center  my-5">
-    <form className="d-flex py-2 mt-4 px-3 existing_search justify-content-between align-items-center " style={{minWidth:"40%"}} role="search">
-    <IoIosSearch className='me-2' style={{fontSize:"30px"}} />
-        <input className=" me-2  border-0 w-100 " type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn existing_search_btn px-4 py-2 " type="submit">Search</button>
-      </form>
-    </div>
-    
-
-    <div className="container existing_packages">
-    <h5 className='text-center fw-semibold'>Top Rated</h5>
-    <h1 className='text-center my-3 fw-bold display-5' >Honeymoon Destination</h1>
+      <Navbar bg={"#13182F"} />
+      <div className="container mt-5 pt-4 d-flex  justify-content-center  my-5">
+        <form className="d-flex py-2 mt-4 px-3 existing_search justify-content-between align-items-center " style={{ minWidth: "40%" }} role="search">
+          <IoIosSearch className='me-2' style={{ fontSize: "30px" }} />
+          <input className=" me-2  border-0 w-100 " type="search" placeholder="Search" aria-label="Search" />
+          <button className="btn existing_search_btn px-4 py-2 " type="submit">Search</button>
+        </form>
+      </div>
 
 
-    <h5 className='text-center fw-semibold'>Top Rated</h5>
-    <h1 className='text-center my-3 fw-bold display-5' >Our Domestic Trips</h1>
-    <div className="d-flex justify-content-center flex-wrap">
-    <PackagesCard domesticCardData={domesticCardData}/>
-    </div>
+      <div className=" px-0 px-lg-5  existing_packages">
+        <h5 className='text-center fw-semibold'>Top Rated</h5>
+        <h1 className='text-center my-4 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Honeymoon Destination</h1>
+        <ExistingPackageCarausel domesticCardData={domesticCardData} crouselId="carouselHoneymoonPackage" />
+
+        <h1 className='text-center  fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Trending Religious Places</h1>
+        <ExistingPackageCarausel domesticCardData={domesticCardData}  crouselId="carouselExistingPackage" />
 
 
-    <h5 className='text-center fw-semibold mt-5'>Explore</h5>
-    <h1 className='text-center my-1 fw-bold display-5' >Best Handpicked For You</h1>
-    <div className="d-flex justify-content-center flex-wrap">
-    <div className="container my-5">
-<Carausel itinerariesData={itinerariesData}/>
-</div>
-    </div>
+        <h5 className='text-center fw-semibold '>Top Rated</h5>
+        <h1 className='text-center my-3 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Our Domestic Trips</h1>
+        <div className="d-flex justify-content-center flex-wrap">
+          {domesticCardData.map((packageData) => (
+            <PackagesCard key={packageData.id} {...packageData} />
+          ))}
+        </div>
 
-    </div>
+
+        
+      </div>
+
+      <h5 className='text-center fw-semibold mt-5'>Explore</h5>
+      <h1 className='text-center my-1 fw-bold display-5' >Best Handpicked For You</h1>
+      <div className="d-flex justify-content-center flex-wrap">
+        <div className="container my-5">
+          {/* You may include your carousel component here */}
+          <Carausel itinerariesData={itinerariesData}/>
+
+        </div>
+      </div>
     </>
   )
 }

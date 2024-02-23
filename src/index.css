@@ -7,6 +7,9 @@
     
     --blue-bg-primary:#273E87;
     --blue-bg-secondary:#4263C9;
+    --blue-bg-ternary:#13182F;
+
+
     --blue-bg-active-fill:#E7EBF8;
     --blue-bg-accordian:#F1F5F5;
     
@@ -19,8 +22,6 @@
     --Error-600:#D92D20;
     --input-bg:#F2F2F2;
     --primary-text-color: #637381;
-
-
 
     /* Existing Packages */
     --stroke: #DFE4EA;
