@@ -68,8 +68,8 @@ export default function Carausel({ itinerariesData }) {
           <span className="prev_next d-flex align-items-center justify-content-center " id="" aria-hidden="true"><GrNext id="next" /></span>
           <span className="visually-hidden">Next</span>
         </button>
-        <div className='gradient-overlay'></div>
         </div>
+        <div className='gradient-overlay'></div>
        
         
       </div>
