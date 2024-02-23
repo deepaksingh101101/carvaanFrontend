@@ -78,9 +78,10 @@ margin-top: 80px;
 
 /* Trust section */
 #body .trust_section{
-background: var(--blue-bg-primary);
-color: var(--white);
-font-family: var(--font-primary);
+    background: url("../../assets//home/trust_bg.png") no-repeat center center;
+    color: var(--white);
+    font-family: var(--font-primary);
+    background-size: cover;
 }
 #body .trust_section p{
 color: rgba(255, 255, 255, 0.76);

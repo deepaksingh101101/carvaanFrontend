@@ -44,7 +44,7 @@ export default function Navbar(props) {
         <>
 {/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed  w-100 " style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}> */}
 {/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: props.bg ? props.bg : "#13182F" }}> */}
-<nav className="px-md-0 px-lg-0 navbar  py-lg-0 navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ?"#13182F"  : props.bg}}>
+<nav className="px-md-0 px-lg-0 navbar top-0   navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ?"#13182F"  : props.bg}}>
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/">
                         <img className='logo' src={FullLogo} style={{ width: '130px' }} alt="Carvaan" />
@@ -63,12 +63,12 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item mx-3">
-                                <Link className="nav-link   active " aria-current="page" to="#">
+                                <Link className="nav-link   active " aria-current="page" to="/">
                                     Home
                                 </Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link  sm " to="#">
+                                <Link className="nav-link  sm " to="/existingPackage">
                                     Existing Packages
                                 </Link>
                             </li>
@@ -133,7 +133,7 @@ export default function Navbar(props) {
 
     </div>):(<button
                                 type='button'
-                                className={`text-white res btn me-2 fw-bold my-3 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
+                                className={`text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
                                 style={{ border: 0 }}
                                 onMouseEnter={() => handleBtnClick('btn1')}
                                 data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
@@ -143,7 +143,7 @@ export default function Navbar(props) {
 }
 
                             <button
-                                className={` text-white res btn me-2 fw-bold my-3 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
+                                className={` text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
                                 style={{ border: 0 }}
                                 onMouseEnter={() => handleBtnClick('btn2')}
                             >

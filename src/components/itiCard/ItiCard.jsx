@@ -3,12 +3,13 @@ import { MdOutlineStar } from "react-icons/md";
 import { IoHeartCircleOutline } from "react-icons/io5";
 import './ItiCard.css';
 
-export default function ItiCard({ id, time, rating, review, title, orignalPrice, discountPrice, img }) {
+export default function ItiCard({  time, rating, review, title, orignalPrice, discountPrice, img }) {
   return (
-    <div className="card px-2" style={{ width: "18rem" }}>
+    <div className="card itiCard p-2" style={{ width: "18rem" }}>
       <img
         src={img}
-        className="card-img-top mt-2"
+        loading='lazy'
+        className="card-img-top  object-fit-cover"
         alt="..."
         style={{ height: "230px" }}
       />

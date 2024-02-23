@@ -69,7 +69,9 @@ export default function Carausel({ itinerariesData }) {
           <span className="visually-hidden">Next</span>
         </button>
         </div>
-       
+        <div className='gradient-overlay'>
+          
+          </div>
         
       </div>
     </>
