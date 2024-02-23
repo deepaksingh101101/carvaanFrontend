@@ -17,7 +17,7 @@ const Footer = () => {
                         <h5 className='text-highlighter'> Company</h5>
                         <ul className=' pl-0'>
                             <li className="nav-item">
-                                <a className=" text-decoration-none link-underline" href="/about">About</a>
+                                <a className=" text-decoration-none link-underline" href="/">About</a>
                             </li>
                             <li className="nav-item">
                                 <a className=" text-decoration-none link-underline" href="/">Jobs</a>
@@ -29,7 +29,7 @@ const Footer = () => {
                                 <a className=" text-decoration-none link-underline" href="/">Advertising</a>
                             </li>
                             <li className="nav-item">
-                                <a className=" text-decoration-none link-underline" href="/contactUs">Contact Us</a>
+                                <a className=" text-decoration-none link-underline" href="/">Contact Us</a>
                             </li>
                         </ul>
                     </div>

@@ -1,14 +1,7 @@
-.trending {
-  font-family: var(--font-primary);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  scale: 1;
-}
-.trending:hover {
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  scale: 1.05;
+.trending{
+    font-family: var(--font-primary);
 }
 
-.trending .card-body .card-title {
-  color: var(--btn-pink-bg);
+.trending .card-body .card-title{
+    color: var(--btn-pink-bg);
 }
