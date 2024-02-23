@@ -1,13 +1,28 @@
-#prev,#next{
-    color: var(--blue-bg-primary);
+#prev,
+#next {
+  color: var(--blue-bg-primary);
 }
-#body .prev_next{
-background: var(--white);
-border-radius: 50%;
-border: 1px solid #D0D5DD;
+#body .prev_next {
+  background: var(--white);
+  border-radius: 50%;
+  border: 1px solid #d0d5dd;
 }
-#body #iNext span, #iPrev span{
-    height: 35px;
-    width: 35px;
-
+#body #iNext span,
+#iPrev span {
+  height: 35px;
+  width: 35px;
+}
+#body .gradient-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgb(242 245 252 / 2%) 0%,
+    rgb(242 245 252) 100%
+  );
+  width: 30vw;
+  margin-left: auto;
 }

@@ -42,9 +42,9 @@ export default function Navbar(props) {
 
     return (
         <>
-{/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed  w-100 " style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}> */}
-{/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: props.bg ? props.bg : "#13182F" }}> */}
-<nav className="px-md-0 px-lg-0 navbar  py-lg-0 navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ?"#13182F"  : props.bg}}>
+            {/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed  w-100 " style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}> */}
+            {/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: props.bg ? props.bg : "#13182F" }}> */}
+            <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed top-0  w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : props.bg }}>
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/">
                         <img className='logo' src={FullLogo} style={{ width: '130px' }} alt="Carvaan" />
@@ -63,12 +63,12 @@ export default function Navbar(props) {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item mx-3">
-                                <Link className="nav-link   active " aria-current="page" to="#">
+                                <Link className="nav-link   active " aria-current="page" to="/">
                                     Home
                                 </Link>
                             </li>
                             <li className="nav-item mx-3">
-                                <Link className="nav-link  sm " to="#">
+                                <Link className="nav-link  sm " to="/existingPackage">
                                     Existing Packages
                                 </Link>
                             </li>
