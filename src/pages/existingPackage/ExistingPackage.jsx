@@ -35,9 +35,10 @@ import melborn from '../../assets/trending/melborn.png'
 
 import './ExistingPackage.css'
 import { IoIosSearch } from "react-icons/io";
-import PackagesCard from '../../components/packagesCard/PackagesCard'
+// import PackagesCard from '../../components/packagesCard/PackagesCard'
 import Navbar from '../../components/navbar/Navbar'
 import ExistingPackageCarausel from '../../components/existingPackageCarausel/ExistingPackageCarausel'
+import PackageCarauselCard from '../../components/packageCarauselCard/PackageCarauselCard'
 const domesticCardData=[{
   id:1,
   destination:"Rome, Italy",
@@ -226,7 +227,7 @@ export default function ExistingPackage() {
         <h1 className='text-center my-3 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Our Domestic Trips</h1>
         <div className="d-flex justify-content-center flex-wrap">
           {domesticCardData.map((packageData) => (
-            <PackagesCard key={packageData.id} {...packageData} />
+            <PackageCarauselCard key={packageData.id} {...packageData} />
           ))}
         </div>
 

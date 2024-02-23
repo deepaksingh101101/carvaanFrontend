@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import './existingPackageCarausel.css'
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
-import PackagesCard from '../packagesCard/PackagesCard';
-
+// import PackageCarauselCard from '../packageCarauselCard/PackageCarauselCard';
+import PackagesCard from '../packagesCard/PackagesCard'
 
 export default function ExistingPackageCarausel({ domesticCardData,crouselId }) {
     const [chunkSize, setChunkSize] = useState(4);
@@ -20,7 +20,7 @@ export default function ExistingPackageCarausel({ domesticCardData,crouselId }) 
             setChunkSize(2);
           }
           else {
-            setChunkSize(1);
+            setChunkSize(2);
           }
         };
     
