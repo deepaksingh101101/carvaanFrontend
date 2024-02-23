@@ -9,6 +9,7 @@ import LoginModal from './components/loginModal/LoginModal';
 import ContactUs from './pages/contactUs/ContactUs';
 import CustomPackages from './pages/customPackages/CustomPackages';
 import ExistingPackage from './pages/existingPackage/ExistingPackage';
+import ScrollToTop from './helpers/ScrollToTop';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
 
      <BrowserRouter>
+     <ScrollToTop/>
      {/* <Navbar/> */}
      <LoginModal/>
       <Routes>
