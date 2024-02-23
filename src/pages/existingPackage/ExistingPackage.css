@@ -19,3 +19,7 @@ input:focus,:active{
     color: var(--white);
     border-radius: 20px;
 }
+
+#body .existing_packages{
+    font-family: var(--font-primary);
+}

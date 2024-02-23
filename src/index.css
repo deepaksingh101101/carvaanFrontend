@@ -14,18 +14,17 @@
     --btn-pink-secondary:#AE4A84;
     
     --rating-green:#039855;
-
     --font-primary: "Inter";
-   
     --grey-text:#808A9E;
     --Error-600:#D92D20;
-  
-
     --input-bg:#F2F2F2;
     --primary-text-color: #637381;
 
 
 
+    /* Existing Packages */
     --stroke: #DFE4EA;
-
+    --green400:#219653;
+    --text-secondary:#5E6282;
+    --star:#F79009;
   }
