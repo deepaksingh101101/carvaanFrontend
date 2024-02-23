@@ -5,12 +5,11 @@ import './ItiCard.css';
 
 export default function ItiCard({ time, rating, review, title, orignalPrice, discountPrice, img }) {
   return (
-    <div className="card px-2" style={{ width: "18rem" }}>
+    <div className="card itiCard p-2" style={{ width: "18rem" }}>
       <img
         src={img}
-        className="card-img-top mt-2"
+        className="card-img-top object-fit-cover"
         alt="..."
-        style={{ height: "230px" }}
         loading='lazy'
       />
       <div className="card-body p-0">
