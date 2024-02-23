@@ -7,35 +7,36 @@ import   {postApi}  from '../../helpers/requestHelpers'
 import { useState } from 'react';
 import OtpBox from '../otpBox/OtpBox';
 import ErrorMessage from '../errorMessage/ErrorMessage'
-
+import  {useForm} from 'react-hook-form'
 export default function LoginModal() {
+
+  const {register,handleSubmit,formState:{errors}}=useForm()
+
 
 const [userEmail, setUserEmail] = useState("");
 const [showOtpBox, setShowOtpBox] = useState(false);
-const [showEmailInputError,setShowEmailInputError]= useState(false);
+// const [showEmailInputError,setShowEmailInputError]= useState(false);
 const[sendBtnContent,setSendBtnContent]=useState("Send Otp");
 // const [isUserLogin, setIsUserLogin] = useState(false)
-const handleSendOtp =  (e) => {
-  e.preventDefault();
+const handleSendOtp =  (data) => {
   setSendBtnContent("Resend Otp")
-  e.preventDefault();
-  if (userEmail.length === 0) {
-    setShowEmailInputError(true);
-  } else {
-    setShowEmailInputError(false);
+    // setShowEmailInputError(false);
     setShowOtpBox(true);
     try {
-      const response =  postApi("post", "/users/send_otp_on_email", { email: userEmail });
+      const response =  postApi("post", "/users/send_otp_on_email", { data });
       console.log(response);
     } catch (error) {
       console.error("Error sending OTP:", error);
     }
-  }
+  
 };
 
+const formSubmit=(data)=>{
+  setUserEmail(data)
+  handleSendOtp(data)
+console.log(data)
+}
 
-
-  
   return (
  (
         <div className="modal fade " id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
@@ -45,29 +46,36 @@ const handleSendOtp =  (e) => {
                         <h2 className="modal-title w-100 fw-bolder " id="exampleModalLongTitle">Log in</h2>
                     </div>
                     <div className="modal-body">
-                    <form>
+                    <form onSubmit={handleSubmit(formSubmit)}>
   <div className="">
     <label htmlFor="exampleInputEmail1"  className=" form-label login_label">Email address</label>
     <input 
     type="email" 
-    value={userEmail} 
-    onChange={(event) => { setUserEmail(event.target.value) }} 
-    className="form-control border-0 p-2 bg_input_grey" 
+    // value={userEmail} 
+    // onChange={(event) => { setUserEmail(event.target.value) }} 
+    className={`form-control border-0 p-2 bg_input_grey ${errors.email? "is-invalid":""} `} 
     id="exampleInputEmail1" 
     aria-describedby="emailHelp" 
     required
+    {...register("email",{required:true})}
 />
+{errors.email &&  <div className="invalid-feedback">
+      Email is Required
+    </div>}
+    <div className="d-flex px-2">
+  <button type='submit'  className='w-100 my-2 btn btn-primary   '    ><span className='send_otp_btn'>{sendBtnContent}</span></button>
+</div>
   </div>
 
 {
-  showEmailInputError?(<ErrorMessage message="Please Enter Email"/>):("")
+  // showEmailInputError?(<ErrorMessage message="Please Enter Email"/>):("")
 }
 
 
   <br/>
-<div className="d-flex px-2">
+{/* <div className="d-flex px-2">
   <button type='submit'  className='w-100 my-2 btn btn-primary   '  onClick={handleSendOtp}  ><span className='send_otp_btn'>{sendBtnContent}</span></button>
-</div>
+</div> */}
   {/* need to be changed */}
   {/* <div className="mb-3">
     <label htmlFor="exampleInputotp1" className="form-label login_label">Otp</label>

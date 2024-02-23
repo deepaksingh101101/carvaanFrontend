@@ -9,6 +9,7 @@ export default function OtpBox({ userEmail }) {
   const [otp, setOtp] = useState(['', '', '', '', '', '']); // Initialize state with an array of 6 empty strings
   const inputsRef = useRef([]);
   const [showOtpError, setShowOtpError] = useState(false);
+  const [wrongOtpError, setWrongOtpError] = useState(false);
   const [isDataBsAdded, setIsDataBsAdded] = useState(false);
 
   useEffect(() => {
@@ -48,8 +49,12 @@ export default function OtpBox({ userEmail }) {
         if(response){
           localStorage.setItem("accessToken",response.data.accessToken)
           localStorage.setItem("refreshToken",response.data.refreshToken)
+          setWrongOtpError(false)
           setIsDataBsAdded(true)
           navigate('/')
+        }
+        else{
+          setWrongOtpError(true)
         }
       } catch (error) {
         console.error("Error sending OTP:", error);
@@ -93,9 +98,8 @@ export default function OtpBox({ userEmail }) {
           />
         ))}
       </div>
-      {showOtpError ? (
-        <ErrorMessage message="Please Enter Otp" />
-      ) : null}
+      {showOtpError && <ErrorMessage message="Please Enter OTP" />}
+      {wrongOtpError && <ErrorMessage message="Invalid OTP" />}
       <button
         id="verifyButton"
         className='btn my-3 w-100 btn-primary'
