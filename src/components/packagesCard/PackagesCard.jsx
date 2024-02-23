@@ -5,7 +5,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 export default function PackagesCard({ img, destination, rating, price, duration }) {
   return (
-    <div className="card m-3 package_card border-0" style={{ width: "18rem" }}>
+    <div className="card m-1 m-sm-3 m-md-3 m-lg-3 package_card border-0" style={{ width: "18rem" }}>
       <img loading='lazy' src={img} className="card-img-top existing_packages_img object-fit-cover" alt="..." />
       <div className="card-body package_card_body">
         <div className="d-flex justify-content-between align-items-center">
