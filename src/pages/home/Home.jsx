@@ -26,6 +26,7 @@ import blue_img4 from '../../assets/trust/blue_img4.jfif'
 import trust_left from '../../assets/home/trust_left.png'
 import TrustSection from '../../components/trustSection/TrustSection';
 import SourceDestCard from '../../components/sourceDestCard/SourceDestCard';
+import TestingRedux from '../../components/trendingCard/TestingRedux';
 export default function Home() {
 
 const trendingCardData=[
@@ -251,8 +252,8 @@ const trustCardDatas=[
 
 
 
-
-
+{/* Testing redux */}
+{/* <TestingRedux/> */}
 
       
 <div className="container my-5" style={{fontFamily:"Inter"}}>
