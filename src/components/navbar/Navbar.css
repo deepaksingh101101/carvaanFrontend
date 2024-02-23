@@ -1,51 +1,55 @@
-#body .navButton1{
-    background: var(--white) ;
-    color: var(--blue-bg-secondary)  !important;
+#body .navButton1 {
+  background: var(--white);
+  color: var(--blue-bg-secondary) !important;
 }
-#body .nav-link{
-    color: var(--white);
+#body .nav-link {
+  color: var(--white);
 }
-
 
 @media all and (max-width: 992px) {
-    #body .navbar-collapse {
-        position: absolute;
-        top: 54px;
-        right: -50%; /* Start offscreen from the right */
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-bottom: 15px;
-        width: 50%; /* Set the width to 50% */
-        transition: all 0.1s ease-in-out;
-        display: block;
-        background: #13182F;
-    }
+  #body .navbar-collapse {
+    position: absolute;
+    top: 54px;
+    right: -50%; /* Start offscreen from the right */
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 50%; /* Set the width to 50% */
+    transition: all 0.1s ease-in-out;
+    display: block;
+    background: #13182f;
+  }
 
-    /* #body .show {
+  /* #body .show {
         background: #13182F !important;
     } */
 
-    #body .navbar-collapse.collapsing {
-        height: auto !important;
-        right: 0; /* Move to the right */
-        transition: all 0.2s ease;
-    }
+  #body .navbar-collapse.collapsing {
+    height: auto !important;
+    right: 0; /* Move to the right */
+    transition: all 0.2s ease;
+  }
 
-    #body .navbar-collapse.show {
-        right: 0; /* Show from the right */
-    }
-    #body .dropdown-item{
-        color: var(--white);
-        font-size: 12px;
-    }
-}
-
-
-
-#body .text_white{
+  #body .navbar-collapse.show {
+    right: 0; /* Show from the right */
+  }
+  #body .dropdown-item {
     color: var(--white);
+    font-size: 12px;
+  }
 }
 
-#body .my_text{
-    font-size: 14px;
+#body .text_white {
+  color: var(--white);
+}
+
+#body .my_text {
+  font-size: 14px;
+}
+#body .navbar-toggler,
+#body .navbar-toggler:focus,
+#body .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+  border: none;
 }
