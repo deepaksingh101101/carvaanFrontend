@@ -12,7 +12,7 @@ import paris from '../../assets/trending/paris.png'
 import Carausel from '../../components/carousel/Carausel';
 import Offer from '../../components/offers/Offer';
 import Faq from '../../components/faq/Faq';
-import aeroplane from '../../assets/home/areoplane.png'
+// import aeroplane from '../../assets/home/areoplane.png'
 import { MdAirplanemodeActive } from "react-icons/md";
 import { IoWallet } from "react-icons/io5";
 import { MdSupportAgent } from "react-icons/md";
