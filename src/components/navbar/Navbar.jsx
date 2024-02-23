@@ -62,7 +62,7 @@ export default function Navbar(props) {
                         <FaBars className='text-white border-0' />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 mt-5 mt-lg-0 gap-3 gap-lg-0 ">
                             <li className="nav-item mx-3">
                                 <Link className="nav-link   active " aria-current="page" to="/">
                                     Home
@@ -85,12 +85,12 @@ export default function Navbar(props) {
                                 </Link>
                                 <ul className="dropdown-menu border-0">
                                     <li>
-                                        <Link className="dropdown-item" to="#">
+                                        <Link className="dropdown-item text-white" to="#">
                                             Action
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="#">
+                                        <Link className="dropdown-item text-white" to="#">
                                             Another action
                                         </Link>
                                     </li>
@@ -98,7 +98,7 @@ export default function Navbar(props) {
                                         {/* <hr className="dropdown-divider" /> */}
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="#">
+                                        <Link className="dropdown-item text-white" to="#">
                                             Something else here
                                         </Link>
                                     </li>
@@ -115,7 +115,7 @@ export default function Navbar(props) {
                                 </Link>
                             </li>
                         </ul>
-                        <div className="d-flex btnContainer flex-wrap " role="search">
+                        <div className="d-flex btnContainer flex-wrap gap-3 gap-lg-0 " role="search">
 
 
 
