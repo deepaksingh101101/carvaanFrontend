@@ -16,6 +16,7 @@ const [showEmailInputError,setShowEmailInputError]= useState(false);
 const[sendBtnContent,setSendBtnContent]=useState("Send Otp");
 // const [isUserLogin, setIsUserLogin] = useState(false)
 const handleSendOtp =  (e) => {
+  e.preventDefault();
   setSendBtnContent("Resend Otp")
   e.preventDefault();
   if (userEmail.length === 0) {
@@ -65,7 +66,7 @@ const handleSendOtp =  (e) => {
 
   <br/>
 <div className="d-flex px-2">
-  <button  className='w-100 my-2 btn btn-primary   '  onClick={handleSendOtp}  ><span className='send_otp_btn'>{sendBtnContent}</span></button>
+  <button type='submit'  className='w-100 my-2 btn btn-primary   '  onClick={handleSendOtp}  ><span className='send_otp_btn'>{sendBtnContent}</span></button>
 </div>
   {/* need to be changed */}
   {/* <div className="mb-3">
