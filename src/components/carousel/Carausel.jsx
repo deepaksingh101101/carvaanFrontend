@@ -51,7 +51,7 @@ export default function Carausel({ itinerariesData }) {
     <>
       <div id="carouselExample" className="carousel slide">
         <div className="carousel-inner">
-        <button style={{opacity:"1"}} id='iPrev' className="carousel-control-prev justify-content-md-start" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button style={{opacity:"1"}} id='iPrev' className="carousel-control-prev justify-content-start" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
           <span className="prev_next d-flex align-items-center justify-content-center " aria-hidden="true"><GrPrevious className='' id='prev' /></span>
           <span className="visually-hidden">Previous</span>
         </button>

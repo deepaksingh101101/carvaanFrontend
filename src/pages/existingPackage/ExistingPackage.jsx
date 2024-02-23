@@ -215,16 +215,16 @@ export default function ExistingPackage() {
 
 
       <div className=" px-0 px-lg-5  existing_packages">
-        <h5 className='text-center fw-semibold'>Top Rated</h5>
-        <h1 className='text-center my-4 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Honeymoon Destination</h1>
+        <h5 className='text-center fw-semibold text_secondary'>Top Rated</h5>
+        <h1 className='blue_ternary text-center my-4 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Honeymoon Destination</h1>
         <ExistingPackageCarausel domesticCardData={domesticCardData} crouselId="carouselHoneymoonPackage" />
 
-        <h1 className='text-center  fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Trending Religious Places</h1>
+        <h1 className='text-center blue_ternary  fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Trending Religious Places</h1>
         <ExistingPackageCarausel domesticCardData={domesticCardData}  crouselId="carouselExistingPackage" />
 
 
-        <h5 className='text-center fw-semibold '>Top Rated</h5>
-        <h1 className='text-center my-3 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Our Domestic Trips</h1>
+        <h5 className='text-center fw-semibold text_secondary '>Top Rated</h5>
+        <h1 className='blue_ternary text-center my-3 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Our Domestic Trips</h1>
         <div className="d-flex justify-content-center flex-wrap">
           {domesticCardData.map((packageData) => (
             <PackageCarauselCard key={packageData.id} {...packageData} />
@@ -236,7 +236,7 @@ export default function ExistingPackage() {
       </div>
 
       <h5 className='text-center fw-semibold mt-5'>Explore</h5>
-      <h1 className='text-center my-1 fw-bold display-5' >Best Handpicked For You</h1>
+      <h1 className='text-center blue_ternary my-1 fw-bold display-5' >Best Handpicked For You</h1>
       <div className="d-flex justify-content-center flex-wrap">
         <div className="container my-5">
           {/* You may include your carousel component here */}

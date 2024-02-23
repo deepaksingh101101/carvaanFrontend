@@ -23,3 +23,11 @@ input:focus,:active{
 #body .existing_packages{
     font-family: var(--font-primary);
 }
+
+#body .blue_ternary{
+    color: var(--blue-bg-ternary);
+}
+
+#body .text_secondary{
+    color: var(--text-secondary);
+}
