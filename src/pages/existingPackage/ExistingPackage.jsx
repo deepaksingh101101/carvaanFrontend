@@ -217,10 +217,10 @@ export default function ExistingPackage() {
       <div className=" px-0 px-lg-5  existing_packages">
         <h5 className='text-center fw-semibold text_secondary'>Top Rated</h5>
         <h1 className='blue_ternary text-center my-4 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Honeymoon Destination</h1>
-        <ExistingPackageCarausel domesticCardData={domesticCardData} crouselId="carouselHoneymoonPackage" />
+        <ExistingPackageCarausel domesticCardData={domesticCardData} crouselId="carouselHoneymoonPackage" interval="1500" />
 
         <h1 className='text-center blue_ternary  fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Trending Religious Places</h1>
-        <ExistingPackageCarausel domesticCardData={domesticCardData}  crouselId="carouselExistingPackage" />
+        <ExistingPackageCarausel domesticCardData={domesticCardData}  crouselId="carouselExistingPackage" interval="2000" />
 
 
         <h5 className='text-center fw-semibold text_secondary '>Top Rated</h5>

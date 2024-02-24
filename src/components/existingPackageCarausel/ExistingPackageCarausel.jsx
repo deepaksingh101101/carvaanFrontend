@@ -5,22 +5,27 @@ import { GrPrevious } from "react-icons/gr";
 // import PackageCarauselCard from '../packageCarauselCard/PackageCarauselCard';
 import PackagesCard from '../packagesCard/PackagesCard'
 
-export default function ExistingPackageCarausel({ domesticCardData,crouselId }) {
+export default function ExistingPackageCarausel({ domesticCardData,crouselId,interval }) {
     const [chunkSize, setChunkSize] = useState(4);
+    const [showCarauselButton, setShowCarauselButton] = useState(false);
 
     useEffect(() => {
         const updateChunkSize = () => {
           const screenWidth = window.innerWidth;
           if (screenWidth >= 1399) {
+            setShowCarauselButton(true)
             setChunkSize(4);
           } else if (screenWidth >= 991) {
+            setShowCarauselButton(false)
             setChunkSize(3);
           }
           else if (screenWidth >= 768){
             setChunkSize(2);
+            setShowCarauselButton(false)
           }
           else {
             setChunkSize(2);
+            setShowCarauselButton(false)
           }
         };
     
@@ -49,14 +54,16 @@ export default function ExistingPackageCarausel({ domesticCardData,crouselId }) 
 
 
   return (
-    <div id={`${crouselId}`} className="carousel slide">
+    // <div id={`${crouselId}`} className="carousel slide"  data-bs-ride="true">
+    // <div id="carouselExampleSlidesOnly" className="carousel slide"  data-bs-ride="carousel" >
+   <div id={`${crouselId}`} className="carousel slide"  data-bs-ride="carousel" >
         <div className="carousel-inner">
-        <button style={{opacity:"1"}} id='iPrev' className="carousel-control-prev pb-5 justify-content-start     " type="button" data-bs-target={`#${crouselId}`} data-bs-slide="prev">
+        {showCarauselButton&& <button style={{opacity:"1"}} id='iPrev' className="carousel-control-prev  justify-content-start"  type="button" data-bs-target={`#${crouselId}`}  data-bs-slide="prev" >
           <span className="prev_next d-flex mb-5 align-items-center  justify-content-center " aria-hidden="true"><GrPrevious className='' id='prev' /></span>
           <span className="visually-hidden">Previous</span>
-        </button>
+        </button>}
           {chunkedDomesticCardData.map((chunk, index) => (
-            <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
+            <div  key={index} className={`carousel-item  ${index === 0 ? "active" : ""}`} data-bs-interval={`${interval}`} >
               <div className="custom_padding_for_box_shadow container d-flex  align-items-center justify-content-center justify-content-sm-center  justify-content-md-between justify-content-lg-between">
                 {chunk.map((itinerary, i) => (
                   <PackagesCard key={i} {...itinerary} />
@@ -64,10 +71,10 @@ export default function ExistingPackageCarausel({ domesticCardData,crouselId }) 
               </div>
             </div>
           ))}
-          <button id='iNext' style={{opacity:"1"}} className=" pb-5  carousel-control-next justify-content-end" type="button" data-bs-target={`#${crouselId}`}  data-bs-slide="next">
+         { showCarauselButton &&<button id='iNext' style={{opacity:"1"}} className="   carousel-control-next justify-content-end" type="button" data-bs-target={`#${crouselId}`}  data-bs-slide="next">
           <span className="prev_next d-flex align-items-center justify-content-center  mb-5" id="" aria-hidden="true"><GrNext id="next" /></span>
           <span className="visually-hidden">Next</span>
-        </button>
+        </button>}
         </div>
         <div className='gradient-overlay'>
           

@@ -25,7 +25,7 @@ input:focus,:active{
 }
 
 #body .blue_ternary{
-    color: var(--blue-bg-ternary);
+    color: var(--blue-bg-primary);
 }
 
 #body .text_secondary{
