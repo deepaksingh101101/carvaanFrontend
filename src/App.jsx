@@ -10,6 +10,7 @@ import ContactUs from './pages/contactUs/ContactUs';
 import CustomPackages from './pages/customPackages/CustomPackages';
 import ExistingPackage from './pages/existingPackage/ExistingPackage';
 import ScrollToTop from './helpers/ScrollToTop';
+import SearchResult from './pages/searchResult/SearchResult';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/contactUs" element={<ContactUs />}/>
         <Route path="/customPackages" element={<CustomPackages />}/>
         <Route path="/existingPackage" element={<ExistingPackage />}/>
+        <Route path="/searchResult" element={<SearchResult />}/>
       
       </Routes>
       <Footer/>
