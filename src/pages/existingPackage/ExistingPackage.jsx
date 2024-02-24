@@ -223,6 +223,15 @@ export default function ExistingPackage() {
         <ExistingPackageCarausel domesticCardData={domesticCardData}  crouselId="carouselExistingPackage" interval="2000" />
 
 
+{/* Our International  trips */}
+<h5 className='text-center fw-semibold text_secondary '>Top Rated</h5>
+        <h1 className='blue_ternary text-center my-3 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Our International Trips</h1>
+        <div className="d-flex justify-content-center flex-wrap">
+          {domesticCardData.map((packageData) => (
+            <PackageCarauselCard key={packageData.id} {...packageData} />
+          ))}
+        </div>
+
         <h5 className='text-center fw-semibold text_secondary '>Top Rated</h5>
         <h1 className='blue_ternary text-center my-3 fw-bold display-5 px-2 px-sm-3 px-md-0 px-lg-0' >Our Domestic Trips</h1>
         <div className="d-flex justify-content-center flex-wrap">
