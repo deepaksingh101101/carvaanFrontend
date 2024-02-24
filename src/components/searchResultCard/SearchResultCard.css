@@ -1,0 +1,133 @@
+#body .search_result_card{
+border-radius: 10px;
+background: var(--white);
+box-shadow: 0px 4px 12px 0px rgba(13, 10, 44, 0.06);
+font-family: var(--font-primary);
+}
+
+#body .search_result_image{
+    border-radius: 6px;
+    max-width:225px;
+    height:200px ;
+}
+
+#body .search_result_by{
+color: var(--search-card-by);
+font-size: 12px;
+font-style: italic;
+}
+
+#body .search_result_seat span{
+    color: var(--success-600);
+}
+
+
+
+#body .search_result_title{
+    color: var(--dark-blue-text);
+    font-weight: 600;
+}
+
+
+#body .search_result_duration{
+ color: var(--main-color-brand);  
+}
+
+#body .date-grey{
+    color: var(--date-grey-color);
+    font-weight: 500;
+}
+
+
+#body .search_result_price_btn{
+border-radius: 6px;
+background: var(--offer-btn-color);
+color: var(--white);
+border: none;
+padding: 5px 14px;
+
+}
+
+#body .search_result_oprice{
+    color: var(--success-600);
+}
+
+#body .per_person{
+color: var(--seats-left);
+font-size: 12px;
+}
+
+
+
+#body .search_result_view{
+    color: #3C54B9;
+    border-radius: 10.12px;
+border: 1px solid #3C54B9;
+font-weight: 500;
+box-shadow: 0px 0.899px 3.598px 0.899px rgba(66, 99, 201, 0.12), 0px 2.698px 2.923px -1.349px rgba(66, 99, 201, 0.25), 0px 0px 0.225px 0.675px rgba(66, 99, 201, 0.05), 0px 0px 0.225px 0.225px rgba(66, 99, 201, 0.07);
+padding: 5px 7px;
+}
+#body .search_result_view:hover{
+    color: var(--white);
+    background:  #4263C9;
+   
+}
+
+#body .search_result_book{
+    border-radius: 10.12px;
+    color: var(--white);
+    background: #4263C9;
+}
+#body .search_result_book:hover{
+    color: #3C54B9;
+border: 1px solid #3C54B9;
+background: var(--white);
+}
+
+@media all and (max-width: 368px) {
+    #body .search_result_oprice,#body .search_result_price_btn, #body .search_result_our,#body .heart_,#body .search_result_title{
+        font-size: 10px !important ;
+    }
+       #body .dprice,#body .stay_included, #body .search_result_date,#body .search_result_duration{
+        font-size: 12px !important ;
+    }
+}
+
+@media all and (max-width: 467px) {
+       #body .search_result_oprice,.search_result_price_btn,.search_result_our,.heart_,.search_result_title{
+        font-size: 15px !important ;
+    }
+       #body .dprice,.stay_included,.search_result_date,.search_result_duration{
+        font-size: 12px !important ;
+    }
+     
+}
+
+
+@media all and (max-width: 769px) {
+    #body .search_result_title,#body .heart_ {
+        font-size: 20px;
+    }
+    #body .search_result_duration,#body .search_result_date{
+        font-size: 15px;
+    }
+    
+       #body .last_card_btn{
+        width: 100% !important;
+        margin-top: 5px;
+    }
+       
+
+}
+
+
+
+
+@media all and (max-width: 992px) {
+    #body .search_result_image{
+        max-width:100%;
+        height:300px ;
+    }
+    
+}
+
