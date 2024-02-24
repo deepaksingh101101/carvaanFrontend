@@ -3,6 +3,7 @@ import FullLogo from '../../assets/home/CarvaanLogo.png';
 import avtar from '../../assets/profile/avtar.png'
 import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
+import { FaBars } from "react-icons/fa6";
 
 import { useState, useEffect } from 'react';
 
@@ -18,9 +19,9 @@ export default function Navbar(props) {
     };
 
     useEffect(() => {
-    if(localStorage.getItem("accessToken")){
-        setHasLocalStorage(true)
-    }
+        if (localStorage.getItem("accessToken")) {
+            setHasLocalStorage(true)
+        }
     }, [hasLocalStorage])
 
     useEffect(() => {
@@ -42,9 +43,9 @@ export default function Navbar(props) {
 
     return (
         <>
-{/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed  w-100 " style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}> */}
-{/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: props.bg ? props.bg : "#13182F" }}> */}
-<nav className="px-md-0 px-lg-0 navbar top-0   navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ?"#13182F"  : props.bg}}>
+            {/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed  w-100 " style={{ zIndex: "1000",transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : "" }}> */}
+            {/* <nav className="px-md-0 px-lg-0 navbar navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: props.bg ? props.bg : "#13182F" }}> */}
+            <nav className="px-md-0 px-lg-0 navbar top-0   navbar-expand-lg position-fixed w-100" style={{ zIndex: 1000, transition: "background 0.3s ease-in-out", background: scrolled ? "#13182F" : props.bg }}>
                 <div className="container-fluid ">
                     <Link className="navbar-brand" to="/">
                         <img className='logo' src={FullLogo} style={{ width: '130px' }} alt="Carvaan" />
@@ -58,10 +59,10 @@ export default function Navbar(props) {
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
-                        <span className="navbar-toggler-icon"></span>
+                        <FaBars className='text-white border-0' />
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 mt-5 mt-lg-0 gap-3 gap-lg-0 ">
                             <li className="nav-item mx-3">
                                 <Link className="nav-link   active " aria-current="page" to="/">
                                     Home
@@ -84,12 +85,12 @@ export default function Navbar(props) {
                                 </Link>
                                 <ul className="dropdown-menu border-0">
                                     <li>
-                                        <Link className="dropdown-item" to="#">
+                                        <Link className="dropdown-item text-white" to="#">
                                             Action
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="#">
+                                        <Link className="dropdown-item text-white" to="#">
                                             Another action
                                         </Link>
                                     </li>
@@ -97,7 +98,7 @@ export default function Navbar(props) {
                                         {/* <hr className="dropdown-divider" /> */}
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item" to="#">
+                                        <Link className="dropdown-item text-white" to="#">
                                             Something else here
                                         </Link>
                                     </li>
@@ -114,33 +115,33 @@ export default function Navbar(props) {
                                 </Link>
                             </li>
                         </ul>
-                        <div className="d-flex btnContainer flex-wrap " role="search">
-                            
+                        <div className="d-flex btnContainer flex-wrap gap-3 gap-lg-0 " role="search">
 
-                          
 
-{
-    hasLocalStorage?(  <div className="d-flex justify-content-between align-items-center me-4">
-    <img className='' style={{width:"40px",height:"40px",borderRadius:"50%"}} src={avtar} alt='profile'/>
-    <button
-        type='button'
-        className={`text_white res btn  fw-bold my-1`}
-        style={{ border: 0 }}
-    >
-        <span className='d-none d-lg-inline my_text' >My</span> Profile
-    </button>
-    <IoIosArrowDown className='text_white' />
 
-    </div>):(<button
-                                type='button'
-                                className={`text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
-                                style={{ border: 0 }}
-                                onMouseEnter={() => handleBtnClick('btn1')}
-                                data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
-                            >
-                                Login Or Sign up
-                            </button>)
-}
+
+                            {
+                                hasLocalStorage ? (<div className="d-flex justify-content-between align-items-center me-4">
+                                    <img className='' style={{ width: "40px", height: "40px", borderRadius: "50%" }} src={avtar} alt='profile' />
+                                    <button
+                                        type='button'
+                                        className={`text_white res btn  fw-bold my-1`}
+                                        style={{ border: 0 }}
+                                    >
+                                        <span className='d-none d-lg-inline my_text' >My</span> Profile
+                                    </button>
+                                    <IoIosArrowDown className='text_white' />
+
+                                </div>) : (<button
+                                    type='button'
+                                    className={`text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
+                                    style={{ border: 0 }}
+                                    onMouseEnter={() => handleBtnClick('btn1')}
+                                    data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
+                                >
+                                    Login Or Sign up
+                                </button>)
+                            }
 
                             <button
                                 className={` text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
