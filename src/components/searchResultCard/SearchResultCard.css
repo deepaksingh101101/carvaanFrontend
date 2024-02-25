@@ -91,6 +91,9 @@ background: var(--white);
        #body .dprice,#body .stay_included, #body .search_result_date,#body .search_result_duration{
         font-size: 12px !important ;
     }
+    #body .heart_ {
+        font-size: 10px  !important;
+    }
 }
 
 @media all and (max-width: 467px) {
@@ -105,8 +108,8 @@ background: var(--white);
 
 
 @media all and (max-width: 769px) {
-    #body .search_result_title,#body .heart_ {
-        font-size: 20px;
+   #body .heart_ {
+        font-size: 20px !important  ;
     }
     #body .search_result_duration,#body .search_result_date{
         font-size: 15px;
