@@ -85,15 +85,32 @@ background: var(--white);
 }
 
 @media all and (max-width: 368px) {
-    #body .search_result_oprice,#body .search_result_price_btn, #body .search_result_our,#body .heart_,#body .search_result_title{
+    #body .search_result_oprice,#body .search_result_price_btn, #body .search_result_our,#body .heart_,#body {
         font-size: 10px !important ;
     }
-       #body .dprice,#body .stay_included, #body .search_result_date,#body .search_result_duration{
-        font-size: 12px !important ;
+       #body .dprice,#body .stay_included, #body .search_result_date,#body .search_result_duration,#body .search_result_title{
+        font-size: 10px !important ;
     }
-    #body .heart_ {
-        font-size: 10px  !important;
+    #body .search_result_image{
+        height: 180px !important;
     }
+    #body .heart_{
+            padding-bottom: 5px;
+            font-size: 20px !important;
+    }
+    /* #body .heart_ {
+        font-size: 9px  !important;
+    } */
+    #body .search_result_by{
+        font-size: 9px;
+        }
+    #body .only_seats,.search_result_seat{
+        font-size: 12px;
+        margin-top: 2px;
+        }
+        #body .last_card_btn {
+            margin-top: 0px !important;
+        }
 }
 
 @media all and (max-width: 467px) {
@@ -108,11 +125,17 @@ background: var(--white);
 
 
 @media all and (max-width: 769px) {
-   #body .heart_ {
+   /* #body .heart_ {
         font-size: 20px !important  ;
     }
     #body .search_result_duration,#body .search_result_date{
         font-size: 15px;
+    } */
+    #body .search_result_oprice,.search_result_price_btn,.search_result_our,.heart_,.search_result_title{
+        font-size: 15px !important ;
+    }
+       #body .dprice,.stay_included,.search_result_date,.search_result_duration{
+        font-size: 12px !important ;
     }
     
        #body .last_card_btn{

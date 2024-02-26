@@ -3,6 +3,7 @@ import './SearchResultCard.css';
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 
+
 export default function SearchResultCard({ searchResults }) {
   return (
     <>
@@ -10,7 +11,7 @@ export default function SearchResultCard({ searchResults }) {
         <div key={searchResult.id} className=" container search_result_card_section my-3" style={{ maxWidth: "935.216px" }}>
           <div className="row search_result_card px-sm-3 py-sm-3 px-md-3 py-md-3 px-lg-1 py-lg-1">
             <div className="col-md-12 px-0 px-lg-2 col-lg-3">
-              <div className="d-flex flex-column px-3 py-3 px-sm-0 py-sm-0">
+              <div className="d-flex flex-column px-3 py-3 py-sm-0 py-md-0 py-lg-0 px-sm-0 py-sm-0">
                 <img className='object-fit-cover my-0 my-lg-2 search_result_image' src={searchResult.img} alt='searchResult1' />
                 <div className="d-flex px-sm-3 px-md-0 px-lg-0 flex-lg-column justify-content-between">
                   <span className='search_result_by mt-1 mt-sm-1 mt-md-1 mt-lg-0 px-0 px-md-2 px-lg-0 fw-semibold'>By Maa Kali Travel</span>
@@ -23,8 +24,8 @@ export default function SearchResultCard({ searchResults }) {
             <div className="col-lg-9 ps-lg-1 px-md-2 px-lg-3 pt-lg-2">
               <div className="d-flex justify-content-between">
                 <h4 className='search_result_title mb-0'>{searchResult.name}</h4>
-                <span>
-                  <FaRegHeart className='heart heart_ mb-2 mb-sm-0 mb-md-0 mb-lg-0 me-2' style={{ fontSize: "25px" }} />
+                <span className='' >
+                  <FaRegHeart  className='heart heart_ mb-2 mb-sm-0 mb-md-0 mb-lg-0 me-2' style={{ fontSize: "25px" }} />
                 </span>
               </div>
               <div className="d-flex align-items-center justify-content-between justify-content-lg-start">

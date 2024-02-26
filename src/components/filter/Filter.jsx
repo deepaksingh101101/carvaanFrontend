@@ -1,12 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './Filter.css'
 import { FaAngleDown } from "react-icons/fa";
 
+import { MdOutlineTune } from "react-icons/md";
 
 export default function Filter() {
     const [showAllDuration, setShowAllDuration] = useState(false);
     const [showAllTranspiration, setShowAllTranspiration] = useState(false);
     const [showAllTheme, setShowAllTheme] = useState(false);
+    const [changeToModal, setChangeToModal] = useState(false);
+
+
+
+
+    useEffect(() => {
+        function handleResize() {
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 991) {
+                setChangeToModal(true);
+            } else {
+                setChangeToModal(false);
+            }
+        }
+
+        // Call handleResize initially
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Remove event listener on component unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []); // Empty dependency array to run this effect only once after the component mounts
+
   return (
     <>
   <div className=" pt-5">
@@ -27,11 +53,26 @@ export default function Filter() {
 
     </div>
 
-    <form className="d-flex mt-2 " role="search">
+    <div className="d-flex justify-content-between align-items-center">
+    <form className="d-flex mt-2 w-100 " role="search">
     <input className="filter_search_input form-control bg-transparent border-0 me-2" type="search" placeholder="Search Beach, Places etc" aria-label="Search"/>
     </form>
 
-<div className="d-flex work_mode flex-column mt-4">
+{changeToModal && <MdOutlineTune style={{fontSize:"25px"}} role='button' className="" data-bs-toggle="modal" data-bs-target="#exampleModalFilter"/>
+}
+    </div>
+
+    <div className={`${changeToModal ? 'modal fade ' : ''}`}  id="exampleModalFilter" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+  <div className="modal-content" style={changeToModal ? { padding: "10px 20px" } : {}}>
+
+ {changeToModal && ( <div className="modal-header px-0 ">
+        <h1 className="modal-title fs-5  " id="exampleModalFilter">Filter Your Offers </h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+)}
+
+    <div className="d-flex work_mode flex-column mt-4">
 <div className="d-flex justify-content-between work"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 <h6>Budget Per Person </h6>
 <FaAngleDown  />
@@ -70,16 +111,10 @@ export default function Filter() {
    20k and Above
   </label>
 </div>
-
-
 </div>
+    </div>
 
-
-</div>
-
-
-
-<div className="d-flex work_mode flex-column mt-4">
+    <div className="d-flex work_mode flex-column mt-4">
 <div className="d-flex justify-content-between work" onClick={()=>{setShowAllDuration(false)}}  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
 <h6>Duration (no of Days)</h6>
 <FaAngleDown  />
@@ -149,24 +184,10 @@ export default function Filter() {
 </div>
     </>
 )}
-
-
-
-
 </div>
+    </div>
 
-
-
-
-
-
-
-
-</div>
-
-
-
-<div className="d-flex work_mode flex-column mt-4">
+    <div className="d-flex work_mode flex-column mt-4">
 <div className="d-flex justify-content-between work"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample14" aria-expanded="false" aria-controls="collapseExample">
 <h6>Trip Caption</h6>
 <FaAngleDown  />
@@ -191,24 +212,9 @@ export default function Filter() {
 
 
 </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-<div className="d-flex work_mode flex-column mt-4">
+    <div className="d-flex work_mode flex-column mt-4">
 <div className="d-flex justify-content-between work"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
 <h6>Rating</h6>
 <FaAngleDown  />
@@ -254,22 +260,9 @@ export default function Filter() {
 </div>
 
 
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-<div className="d-flex work_mode flex-column mt-4">
+    <div className="d-flex work_mode flex-column mt-4">
 <div className="d-flex justify-content-between work"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
 <h6>Flight Inclusive</h6>
 <FaAngleDown  />
@@ -461,9 +454,6 @@ export default function Filter() {
 
 
 </div>
-
-
-
 
 <div className="d-flex work_mode flex-column mt-4">
 <div className="d-flex justify-content-between work"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample8" aria-expanded="false" aria-controls="collapseExample">
@@ -931,7 +921,20 @@ export default function Filter() {
 
 
 
-</div>
+    </div>
+
+        
+        </div>
+        </div>
+        </div>
+    
+
+
+
+
+
+
+
 
 
 

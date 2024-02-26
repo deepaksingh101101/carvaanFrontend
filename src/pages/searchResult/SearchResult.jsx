@@ -81,7 +81,7 @@ export default function SearchResult() {
 <Filter/>
     </div>
     <div className="col-lg-9">
-    <div className="container  d-flex flex-column  justify-content-between mt-5 pt-5" style={{ maxWidth: "980.216px" }}>
+    <div className="container  d-flex flex-column  justify-content-between  mt-3 pt-0 mt-sm-3 pt-sm-0 mt-md-5 pt-md-0 mt-lg-5 pt-lg-5" style={{ maxWidth: "980.216px" }}>
 <div className="d-flex justify-content-between px-3">
 <h6 className='text-start fw-bold search_result_count' >Chilka: <span className='count fw-bold'>13</span> Search result found </h6>
 
