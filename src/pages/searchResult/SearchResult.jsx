@@ -8,6 +8,7 @@ import search4 from '../../assets/searchResult/search4.jfif';
 import search5 from '../../assets/searchResult/search5.jfif';
 import search6 from '../../assets/searchResult/search6.jfif';
 import { FaAngleDown } from "react-icons/fa";
+import Filter from '../../components/filter/Filter';
 
 const searchResultData =[
     {
@@ -74,9 +75,15 @@ export default function SearchResult() {
     
 
 
+<div className="container">
+  <div className="row">
+    <div className="col-lg-3">
+<Filter/>
+    </div>
+    <div className="col-lg-9">
     <div className="container  d-flex flex-column  justify-content-between mt-5 pt-5" style={{ maxWidth: "980.216px" }}>
 <div className="d-flex justify-content-between px-3">
-<h6 className='text-start fw-bold search_result_count' >Chilka: <span className='fw-bold'>13</span> Search result found </h6>
+<h6 className='text-start fw-bold search_result_count' >Chilka: <span className='count fw-bold'>13</span> Search result found </h6>
 
 <div className="dropdown  sort_dropdown  d-flex flex-column">
 
@@ -98,6 +105,9 @@ export default function SearchResult() {
 </div>
       <SearchResultCard searchResults={searchResultData}/>
     </div>
+    </div>
+  </div>
+</div>
     </>
   )
 }

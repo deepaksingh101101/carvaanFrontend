@@ -7,7 +7,7 @@ export default function SearchResultCard({ searchResults }) {
   return (
     <>
       {searchResults.map(searchResult => (
-        <div key={searchResult.id} className=" container search_result_card_section my-5" style={{ maxWidth: "935.216px" }}>
+        <div key={searchResult.id} className=" container search_result_card_section my-3" style={{ maxWidth: "935.216px" }}>
           <div className="row search_result_card px-sm-3 py-sm-3 px-md-3 py-md-3 px-lg-1 py-lg-1">
             <div className="col-md-12 px-0 px-lg-2 col-lg-3">
               <div className="d-flex flex-column px-3 py-3 px-sm-0 py-sm-0">

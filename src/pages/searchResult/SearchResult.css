@@ -22,6 +22,10 @@ border: 1px solid var(--gray-200);
 
 #body .search_result_count{
     font-size: clamp(12px,2vw,24px);
+    color: var(--blue-900);
+}
+#body .count{
+    color: var(--black);
 }
 
 #body .sort_by,.early{

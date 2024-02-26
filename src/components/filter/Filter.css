@@ -1,0 +1,22 @@
+#body .blue_text{
+    color: var(--blue-bg-secondary);
+
+}
+
+#body .filter{
+    font-family: var(--font-primary);
+    border-radius: 12px;
+border: 1px solid var(--gray-200);
+background: var(--white);
+}
+
+#body .filter_count{
+    background: #EFF8FF;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+#body .filter_search_input:active,:focus{
+box-shadow: none !important;
+}
