@@ -1,0 +1,31 @@
+#body .sort_btn:focus,:active{
+border: none;
+outline: none;
+
+}
+
+#body .sort_btn{
+    font-size: clamp(10px,1vw,14px);
+    border: none;
+outline: none;
+}
+#body .sort_dropdown{
+background: var(--white);
+width:fit-content;
+border-radius: 6px;
+border: 1px solid var(--gray-200);
+}
+
+#body .after_drop::after{
+    display: none;
+}
+
+#body .search_result_count{
+    font-size: clamp(12px,2vw,24px);
+}
+
+#body .sort_by,.early{
+    font-size: clamp(10px,1vw,14px);
+}
+
+
