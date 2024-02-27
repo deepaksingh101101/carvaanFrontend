@@ -9,6 +9,7 @@ import search5 from '../../assets/searchResult/search5.jfif';
 import search6 from '../../assets/searchResult/search6.jfif';
 import { FaAngleDown } from "react-icons/fa";
 import Filter from '../../components/filter/Filter';
+import CompareBox from '../../components/compareBox/CompareBox';
 
 const searchResultData =[
     {
@@ -108,6 +109,10 @@ export default function SearchResult() {
     </div>
   </div>
 </div>
+
+<CompareBox/>
+
+
     </>
   )
 }
