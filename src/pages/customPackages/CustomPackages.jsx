@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './CustomPackages.css';
 import customPackageImg from '../../assets/customPackages/custom_packeges_mobile_img.png';
 import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
-
+import Navbar from '../../components/navbar/Navbar'
 export default function CustomPackages() {
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
@@ -43,7 +43,9 @@ export default function CustomPackages() {
 
   return (
     <>
-      <div className="container px-2 px-sm-5 px-md-5 px-lg-5 custom_packages my-5 py-5" style={{maxWidth:"936px"}}>
+       <Navbar bg={"#13182F"}/> 
+    <div className="pt-5">
+    <div className="container px-2 px-sm-5 mt-5 px-md-5 px-lg-5 custom_packages my-5 py-5" style={{maxWidth:"936px"}}>
         <div className="row">
           <div className="col-lg-5 d-flex flex-column justify-content-between my-5">
             <div className="custom_top">
@@ -188,6 +190,7 @@ export default function CustomPackages() {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 }

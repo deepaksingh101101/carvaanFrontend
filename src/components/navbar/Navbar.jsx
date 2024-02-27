@@ -143,13 +143,14 @@ export default function Navbar(props) {
                                 </button>)
                             }
 
-                            <button
+                           <Link to='/customPackages'> <button
                                 className={` text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn2' ? 'navButton1' : ' '}`}
                                 style={{ border: 0 }}
                                 onMouseEnter={() => handleBtnClick('btn2')}
                             >
                                 Custom Packages
                             </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
