@@ -9,6 +9,15 @@
   background:var(--blue-bg-ternary)
 }
 
+                                       
+#body .nav_drop:hover{
+color: var(--black) !important;
+}
+#body .nav_drop:focus{
+background: var(--blue-bg-ternary);
+color: var(--white) !important;
+}
+
 @media all and (max-width: 992px) {
   #body .navbar-collapse {
     position: absolute;

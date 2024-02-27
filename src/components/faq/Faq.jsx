@@ -4,7 +4,7 @@ import Accordian from '../accordian/Accordian'
 export default function Faq() {
   return (
     <>
-  <div className="container faq mb-5">
+  <div className="container faq mb-5" id="faq">
     <h2 className='text-center fw-bold mt-5'>Frequently ask question</h2>
   <ul className="nav  nav-pills mb-3 d-flex justify-content-center mt-5" id="pills-tab" role="tablist">
   <li className="nav-item for_active" role="presentation">
