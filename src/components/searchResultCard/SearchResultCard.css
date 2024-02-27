@@ -157,3 +157,13 @@ background: var(--white);
     
 }
 
+
+
+#body .compare_card_check{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+border: none;
+/* background: rgba(96, 104, 139, 0.432); */
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}

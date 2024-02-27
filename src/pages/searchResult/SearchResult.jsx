@@ -114,6 +114,7 @@ export default function SearchResult() {
 </div>
 
       <SearchResultCard searchResults={searchResultData}/>
+      
     </div>
     </div>
   </div>
