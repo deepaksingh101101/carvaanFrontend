@@ -102,8 +102,17 @@ export default function SearchResult() {
     <li><a className="dropdown-item" href="#">Something else here</a></li>
   </ul>
 </div>
-
 </div>
+
+<div className="d-flex flex-row-reverse px-3 mt-2 ">
+<div className="d-flex flex-row-reverse ">
+  <input className="form-check-input ms-3 " type="checkbox" value="" id="flexCheckDefault"/>
+  <label  className="form-check-label" htmlFor="flexCheckDefault">
+    Add to Compare
+  </label>
+</div>
+</div>
+
       <SearchResultCard searchResults={searchResultData}/>
     </div>
     </div>
