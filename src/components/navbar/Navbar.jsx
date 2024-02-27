@@ -83,14 +83,14 @@ export default function Navbar(props) {
                                 >
                                     Special Deals
                                 </Link>
-                                <ul className="dropdown-menu border-0">
+                                <ul className="dropdown-menu  border-0">
                                     <li>
-                                        <Link className="dropdown-item text-white" to="#">
+                                        <Link className="dropdown-item navDropdown text-white" to="#">
                                             Action
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item text-white" to="#">
+                                        <Link className="dropdown-item navDropdown text-white" to="#">
                                             Another action
                                         </Link>
                                     </li>
@@ -98,7 +98,7 @@ export default function Navbar(props) {
                                         {/* <hr className="dropdown-divider" /> */}
                                     </li>
                                     <li>
-                                        <Link className="dropdown-item text-white" to="#">
+                                        <Link className="dropdown-item navDropdown text-white" to="#">
                                             Something else here
                                         </Link>
                                     </li>

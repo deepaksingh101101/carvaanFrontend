@@ -21,23 +21,23 @@ color: var(--green400);
 }
 
 #body .star{
-    font-size: clamp(8px, 0.9vw, 32px);
+    font-size: clamp(8px, 0.9vw, 20px);
 }
 
 #body .existing_rating,.star{
-    font-size: clamp(8px, 0.9vw, 32px);
+    font-size: clamp(8px, 0.9vw, 20px);
     margin-top: 3px;
 }
 
 #body .existing_price{
-    font-size: clamp(10px, 1.1vw, 32px);
+    font-size: clamp(10px, 1.1vw, 20px);
 }
 #body .existing_perPerson{
-    font-size: clamp(8px, 0.8vw, 32px);
+    font-size: clamp(8px, 0.8vw, 15px);
 }
 
 #body .duration{
-    font-size: clamp(10px, 1vw, 32px);
+    font-size: clamp(10px, 1vw, 15px);
 }
 
 #body .existing_packages_img{

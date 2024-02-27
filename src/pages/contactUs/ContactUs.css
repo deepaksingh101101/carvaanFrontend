@@ -32,7 +32,7 @@
 
 #body .contact_btn span{
     background: var(--blue-bg-secondary);
-    font-size: clamp(10px, 1.1vw, 50px) ;
+    font-size: clamp(12px, 1.1vw, 20px) ;
 }
 #body .contact_btn {
     background: var(--blue-bg-secondary);

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './CustomPackages.css';
 import customPackageImg from '../../assets/customPackages/custom_packeges_mobile_img.png';
 import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
 import Navbar from '../../components/navbar/Navbar'
+import circle from '../../assets/customPackages/Ellipse 81.png'
 export default function CustomPackages() {
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
@@ -44,12 +45,13 @@ export default function CustomPackages() {
   return (
     <>
        <Navbar bg={"#13182F"}/> 
-    <div className="pt-5">
+    <div className="pt-lg-5">
     <div className="container px-2 px-sm-5 mt-5 px-md-5 px-lg-5 custom_packages my-5 py-5" style={{maxWidth:"936px"}}>
         <div className="row">
           <div className="col-lg-5 d-flex flex-column justify-content-between my-5">
-            <div className="custom_top">
-            <h2 className='fw-bold text-center text-lg-start '>Request Your Custom Packages</h2>
+            <div className="custom_top position-relative " >
+              <img   className='position-absolute d-none d-lg-block ' style={{top:"-20px",left:"-20px"}} src={circle} alt="" />
+            <h2 style={{zIndex:"2"}}   className='position-relative fw-bold text-center text-lg-start '>Request Your Custom Packages</h2>
             <p className='py-3 text-center text-lg-start grey_text'>Tailor-Made Adventures Customize Your Trip with Ease and Flexibility!</p>
             </div>
              <div className="custom_img my-5 d-flex justify-content-center mt-5">

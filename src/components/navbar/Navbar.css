@@ -10,10 +10,10 @@
 }
 
                                        
-#body .nav_drop:hover{
+#body .navDropdown:hover{
 color: var(--black) !important;
 }
-#body .nav_drop:focus{
+#body .navDropdown:focus{
 background: var(--blue-bg-ternary);
 color: var(--white) !important;
 }
