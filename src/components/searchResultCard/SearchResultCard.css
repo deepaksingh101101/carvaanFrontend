@@ -86,7 +86,7 @@ background: var(--white);
 
 @media all and (max-width: 368px) {
     #body .search_result_oprice,#body .search_result_price_btn, #body .search_result_our,#body .heart_,#body {
-        font-size: 10px !important ;
+        font-size: 8px !important ;
     }
        #body .dprice,#body .stay_included, #body .search_result_date,#body .search_result_duration,#body .search_result_title{
         font-size: 10px !important ;
