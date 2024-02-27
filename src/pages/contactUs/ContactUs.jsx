@@ -2,11 +2,12 @@ import './ContactUs.css'
 import { FiHome } from "react-icons/fi";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
-
+import Navbar from '../../components/navbar/Navbar'
 export default function ContactUs() {
   return (
     <>
-   <div className="contact my-5">
+    <Navbar bg={"#13182F"}/> 
+   <div className="contact my-5 pt-0">
    <div className="container">
         <div className="row">
             <div className="col-lg-6 mt-5 ">
