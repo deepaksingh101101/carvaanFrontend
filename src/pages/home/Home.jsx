@@ -27,6 +27,13 @@ import trust_left from '../../assets/home/trust_left.png'
 import TrustSection from '../../components/trustSection/TrustSection';
 import SourceDestCard from '../../components/sourceDestCard/SourceDestCard';
 import TestingRedux from '../../components/trendingCard/TestingRedux';
+
+import handpick1 from '../../assets/home/handpick1.jfif'
+import handpick2 from '../../assets/home/handpick2.jfif'
+import handpick3 from '../../assets/home/handpick3.jfif'
+import handpick4 from '../../assets/home/handpick4.jfif'
+
+
 export default function Home() {
 
 const trendingCardData=[
@@ -97,7 +104,7 @@ const itinerariesData=[
     title:"Dubai International special Flight Deals1",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
-    img:goa
+    img:handpick1
   },
   {
     id:"2",
@@ -107,7 +114,7 @@ const itinerariesData=[
     title:"Dubai International special Flight Deals2",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
-    img:ladakh
+    img:handpick2
   },
   {
     id:"3",
@@ -117,7 +124,7 @@ const itinerariesData=[
     title:"Dubai International special Flight Deals3",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
-    img:andaman
+    img:handpick3
   },
   {
     id:"4",
@@ -127,7 +134,7 @@ const itinerariesData=[
     title:"Dubai International special Flight Deals4",
     orignalPrice:"INR 2,34,455",
     discountPrice:"INR 86,000",
-    img:chilka
+    img:handpick4
   },
   {
     id:"5",
@@ -268,7 +275,7 @@ const trustCardDatas=[
 
 {/* Carausel  */}
 
-<div className="container">
+<div className="carousel_container  ms-3 ps-sm-5 ms-sm-5  ps-md-5 ms-md-5 ps-lg-5 ms-lg-5">
 <Carausel itinerariesData={itinerariesData}/>
 </div>
 

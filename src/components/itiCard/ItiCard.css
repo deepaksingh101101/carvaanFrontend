@@ -3,7 +3,7 @@
     color: var(--white);
   }
   #body .carousel-item {
-    font-family: var(--font-primary);
+    font-family: var(--font-primary) ;
   }
   .heart {
     color: var(--btn-pink-bg);
@@ -13,11 +13,56 @@
     color: var(--grey-text);
     opacity: 0.8;
     font-weight: 500;
+    font-size: clamp(10px, 1vw, 15px);
+  }
+  
+  #body .oPrice {
+    font-size: clamp(10px, 2vw, 16px) !important;
+    /* font-size: 16px !important; */
+    color: var(--grey-text);
+    opacity: 0.8;
+    font-weight: 500;
+  }
+  #body .dPrice {
+    font-size: clamp(10px, 2vw, 16px) !important;
+  }
+
+  #body .handpickRating{
+    font-size: clamp(10px, 1vw, 15px);
+  }
+
+
+  #body .card_title{
+font-family: var(--font-primary);
+/* font-size: clamp(0.625rem, 0.4464rem + 0.8929vw, 1.25rem); */
+font-weight: 600;
   }
   #body .itiCard{
       border-radius: 8px;
   }
   #body .itiCard img {
-    height: 230px;
     border-radius: 8px;
+  }
+
+
+  @media all and (max-width: 551px) {
+    #body .itiCard{
+     height: 400px !important;
+     width: 120px !important;
+    }
+    #body .itiCard{
+     min-width: 270px !important;
+    }
+
+    #body .card_title{
+      font-size: 13px;
+    }
+    #body .iti_image{
+      height: 212px !important;
+    }
+
+
+    /* #body .carousel_container ul li{
+      width: 279px !important;
+    } */
   }

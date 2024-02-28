@@ -35,3 +35,18 @@ border: 1px solid #D0D5DD;
   margin-left: 0;
   width: 15vw;
 }
+
+
+
+#body .carousel_container ul li{
+  width: 395px !important;
+  display: flex;
+  justify-content: center;
+}
+
+
+@media all and (max-width: 551px) {
+  #body .carousel_container ul li{
+    width: 279px !important;
+  }
+}

@@ -52,23 +52,23 @@ export default function Carausel({ itinerariesData }) {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      partialVisibilityGutter: 80,
-      items: 4
+      partialVisibilityGutter: 0,
+      items: 5
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      breakpoint: { max: 3000, min: 1024  },
+      items: 4,
       partialVisibilityGutter: 80
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      partialVisibilityGutter: 40
+      breakpoint:{ max: 1024, min: 464 },
+      items: 3,
+      partialVisibilityGutter: 0
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 2,
-      partialVisibilityGutter: 40
+      partialVisibilityGutter: 0
     }
   };
 
@@ -109,18 +109,22 @@ partialVisible={true}
   responsive={responsive}
   infinite={true}
   autoPlay={true}
-  autoPlaySpeed={1000}
+  autoPlaySpeed={1500}
+  minimumTouchDrag={10}
   keyBoardControl={true}
+  rewind={true}
+  rewindWithAnimation={true}
   containerClass="carousel-container"
   removeArrowOnDeviceType={["tablet", "mobile"]}
   dotListClass="custom-dot-list-style"
-  itemClass="carousel-item-padding-40-px"
+  slidesToSlide={1}
+  // itemClass="carousel-item-padding-40-px"
 >
 
   {itinerariesData.map((itinerary,i)=>(
     <ItiCard key={i} {...itinerary} />
   ))}
-</Carousel>;
+</Carousel>
 
     </>
   );
