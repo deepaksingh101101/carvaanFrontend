@@ -275,7 +275,8 @@ const trustCardDatas=[
 
 {/* Carausel  */}
 
-<div className="carousel_container  ms-3 ps-sm-5 ms-sm-5  ps-md-5 ms-md-5 ps-lg-5 ms-lg-5">
+{/* <div className="carousel_container  ms-3 ps-sm-5 ms-sm-5  ps-md-5 ms-md-5 ps-lg-5 ms-lg-5"> */}
+<div className="carousel_container initaries_carausel_outer  ms-0 ps-0  ms-md-5 ps-md-5 ms-lg-5 ps-lg-5 ">
 <Carausel itinerariesData={itinerariesData}/>
 </div>
 

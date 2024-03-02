@@ -2,7 +2,7 @@ import  axios  from "axios";
 
 
 const api=axios.create({
-    baseURL:"https://d4da-103-16-69-133.ngrok-free.app",
+    baseURL:"https://6aa0-103-16-69-134.ngrok-free.app",
     timeout:5000,
     headers:{'X-Custom_Header':'foobar'}
 })
