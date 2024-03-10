@@ -25,11 +25,11 @@ export default function ItiCard({ itinerariesData }) {
         keyboard={{
           enabled: true,
         }}
-        autoplay={false}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        // autoplay={false}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
        
         navigation={true}
         breakpoints={{

@@ -14,8 +14,7 @@ export default function SearchResultCard({ searchResults }) {
       <div className="d-flex flex-row-reverse  align-content-center">
     
         <div key={searchResult.id} className=" container search_result_card_section my-3" style={{ maxWidth: "935.216px" }}>
-          <div className="row position-relative search_result_card px-sm-3 py-sm-3 px-md-3 py-md-3 px-lg-1 py-lg-1">
-  <input className="form-check-input compare_card_check mt-0 position-absolute fs-2 top-0" style={{left:"0px",}}  type="checkbox" value="" id="flexCheckChecked" />
+          <div className="row  search_result_card px-sm-3 py-sm-3 px-md-3 py-md-3 px-lg-1 py-lg-1">
 
             <div className="col-md-12  px-0 px-lg-2 col-lg-3">
       
@@ -50,19 +49,25 @@ export default function SearchResultCard({ searchResults }) {
                   <p className='my-0 date-grey search_result_our'>Our Price</p>
                   <button className='mx-2 search_result_price_btn'>{searchResult.offerPercentage}</button>
                 </div>
-                <div className="d-flex align-items-center mt-1 mt-sm-1 mt-md-3 mt-lg-3">
+                <div className="d-flex align-items-center mt-1 mt-sm-1 mt-md-3 mt-lg-3 justify-content-between">
+                  <div className="d-flex position-relative">
                   <div className="d-flex flex-column justify-content-center">
                     <h4 className='my-0 search_result_oprice fw-bold'>{searchResult.offerPrice}</h4>
                     <p className='per_person mb-0 fw-semibold'>Per Person</p>
                   </div>
                   <p className='my-1 mx-2'><s className='date-grey dprice'>{searchResult.originalPrice}</s></p>
+                  
+                  </div>
+                  <input className="form-check-input mb-3 compare_card_check mt-0  fs-2 top-0" style={{left:"0px", border:"2px solid red"}}  type="checkbox" value="" id="flexCheckChecked" />
+
                 </div>
+
               </div>
               <p className='stay_included mb-0 fw-semibold date-grey'>Stay Included This Packages</p>
               <div className="d-flex flex-wrap mt-0 mt-sm-4 mt-md-4 mt-lg-4 justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-between align-items-baseline mb-3 mb-sm-0 mb-md-0 mb-lg-0 mt-2">
                 <div className="d-flex ">
                   <div className="me-2 form-check">
-                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                    <input className="form-check-input d-md-none " type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                     <label className="form-check-label fw-semibold" htmlFor="flexRadioDefault1">Camp</label>
                   </div>
                   <div className="mx-2 form-check">

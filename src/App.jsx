@@ -11,6 +11,7 @@ import CustomPackages from './pages/customPackages/CustomPackages';
 import ExistingPackage from './pages/existingPackage/ExistingPackage';
 import ScrollToTop from './helpers/ScrollToTop';
 import SearchResult from './pages/searchResult/SearchResult';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
         <Route path="/customPackages" element={<CustomPackages />}/>
         <Route path="/existingPackage" element={<ExistingPackage />}/>
         <Route path="/searchResult" element={<SearchResult />}/>
+
+        {/* private routes */}
+        <Route path="/profile" element={<Profile />}/>
       
       </Routes>
       <Footer/>
