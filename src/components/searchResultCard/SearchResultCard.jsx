@@ -1,9 +1,61 @@
 import './SearchResultCard.css';
+import Swal from 'sweetalert2'
 
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
+import {  useSelector,useDispatch } from 'react-redux';
+import { addSelectedCard, removeSelectedCard, setIsAnyCardSelectedTrue } from '../../store/slices/isAnyCardSelected';
 
 export default function SearchResultCard({ searchResults }) {
+  const isCompareCheckboxChecked = useSelector((state) => state.compareCheckbox.isCompareCheckboxChecked);
+  const selectedCards = useSelector((state) => state.isAnyCard.selectedCards);
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+
+
+ 
+const dispatch =useDispatch();
+
+
+const handleCardSelection = (searchResult, isChecked) => {
+  console.log(selectedCards.length);
+
+  // Check if the card is already selected
+  const isAlreadySelected = selectedCards.some(card => card.id === searchResult.id);
+
+  if (isChecked && !isAlreadySelected && selectedCards.length < 3) {
+      // If checkbox is checked and card is not already selected, add the card
+      dispatch(addSelectedCard(searchResult));
+      dispatch(setIsAnyCardSelectedTrue());
+  } else if (!isChecked && isAlreadySelected) {
+      // If checkbox is unchecked and card is already selected, remove the card
+      dispatch(removeSelectedCard(searchResult.id)); // Assuming you have a removeSelectedCard action
+  } else if (!isChecked && !isAlreadySelected) {
+      // If checkbox is unchecked and card is not already selected, do nothing
+  } else if (isChecked && isAlreadySelected) {
+      // If checkbox is checked but card is already selected, show an error message
+      Toast.fire({
+          icon: "error",
+          title: "This card is already selected for comparison."
+      });
+  } else {
+      // If the number of selected cards is already 3, show an error message
+      Toast.fire({
+          icon: "error",
+          title: "Maximum 3 Can be Compared"
+      });
+  }
+}
+
 
 
   return (
@@ -58,7 +110,21 @@ export default function SearchResultCard({ searchResults }) {
                   <p className='my-1 mx-2'><s className='date-grey dprice'>{searchResult.originalPrice}</s></p>
                   
                   </div>
-                  <input className="form-check-input mb-3 compare_card_check mt-0  fs-2 top-0" style={{left:"0px", border:"2px solid red"}}  type="checkbox" value="" id="flexCheckChecked" />
+                  {isCompareCheckboxChecked &&
+  <input 
+  className={`form-check-input compare_card_check mt-0 fs-2 top-0${selectedCards.length === 3 ? " disabled" : ""}`} 
+  onChange={(e) => handleCardSelection(searchResult, e.target.checked)} // Pass isChecked parameter
+  style={{left: "0px", border: "2px solid red"}}  
+  type="checkbox" 
+  value="" 
+  checked={selectedCards.some(card => card.id === searchResult.id)} // Check if searchResult id is present in selectedCards
+  id="flexCheckChecked" 
+  disabled={selectedCards.length === 3} // Ensure input is disabled when selectedCards length is 3
+/>
+
+
+}
+
 
                 </div>
 

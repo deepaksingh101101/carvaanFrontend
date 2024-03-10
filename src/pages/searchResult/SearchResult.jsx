@@ -10,6 +10,9 @@ import search6 from '../../assets/searchResult/search6.jfif';
 import { FaAngleDown } from "react-icons/fa";
 import Filter from '../../components/filter/Filter';
 import CompareBox from '../../components/compareBox/CompareBox';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleIsCompareCheckboxChecked } from '../../store/slices/isCompareCheckbox';
+import { setIsAnyCardSelectedTrue } from '../../store/slices/isAnyCardSelected';
 
 const searchResultData =[
     {
@@ -69,7 +72,23 @@ const searchResultData =[
     }
 ]
 
+
+
+
 export default function SearchResult() {
+
+
+  
+  const isCompareCheckboxChecked = useSelector((state) => state.compareCheckbox.isCompareCheckboxChecked);
+  const dispatch = useDispatch();
+
+  const isAnyCardSelected = useSelector((state) => state.isAnyCard.isAnyCardSelected);
+  
+const handleCompareCheckClick=()=>{
+dispatch(toggleIsCompareCheckboxChecked())
+}
+
+
   return (
     <>
     <Navbar bg={"#13182F"}/>
@@ -106,7 +125,7 @@ export default function SearchResult() {
 
 <div className="d-flex flex-row-reverse px-3 mt-2 ">
 <div className="d-flex flex-row-reverse ">
-  <input className="form-check-input ms-3 " type="checkbox" value="" id="flexCheckDefault"/>
+  <input onClick={handleCompareCheckClick}  className="form-check-input ms-3 " checked={isCompareCheckboxChecked} type="checkbox" value={isCompareCheckboxChecked} id="flexCheckDefault"/>
   <label  className="form-check-label" htmlFor="flexCheckDefault">
     Add to Compare
   </label>
@@ -120,7 +139,14 @@ export default function SearchResult() {
   </div>
 </div>
 
-<CompareBox/>
+
+{
+  isAnyCardSelected
+  &&
+  <div className=" position-fixed w-100" style={{bottom:"0"}}>
+  <CompareBox/>
+  </div>
+}
 
 
     </>
