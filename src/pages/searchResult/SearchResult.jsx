@@ -12,7 +12,8 @@ import Filter from '../../components/filter/Filter';
 import CompareBox from '../../components/compareBox/CompareBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleIsCompareCheckboxChecked } from '../../store/slices/isCompareCheckbox';
-import { setIsAnyCardSelectedTrue } from '../../store/slices/isAnyCardSelected';
+import ComparisionCard from '../../components/comparisonCard/ComparisionCard';
+// import { setIsAnyCardSelectedTrue } from '../../store/slices/isAnyCardSelected';
 
 const searchResultData =[
     {
@@ -23,6 +24,11 @@ const searchResultData =[
         offerPrice:"$13,345/",
         originalPrice:"$16,345/",
         img:search1,
+        departure_date:"12.02.24",
+        rating:5,
+        seats_left:20,
+        company_name:"By Ma kali Travels "
+
     },
     {
         id:2,
@@ -32,6 +38,10 @@ const searchResultData =[
         offerPrice:"$13,345/",
         originalPrice:"$16,345/",
         img:search2,
+        departure_date:"12.02.24",
+        rating:5,
+        seats_left:20,
+        company_name:"By Ma kali Travels "
     },
     {
         id:3,
@@ -41,6 +51,10 @@ const searchResultData =[
         offerPrice:"$13,345/",
         originalPrice:"$16,345/",
         img:search3,
+        departure_date:"12.02.24",
+        rating:5,
+        seats_left:20,
+        company_name:"By Ma kali Travels "
     },
     {
         id:4,
@@ -50,7 +64,12 @@ const searchResultData =[
         offerPrice:"$13,345/",
         originalPrice:"$16,345/",
         
+        
         img:search4,
+        departure_date:"12.02.24",
+        rating:5,
+        seats_left:20,
+        company_name:"By Ma kali Travels "
     },
     {
         id:5,
@@ -60,6 +79,10 @@ const searchResultData =[
         offerPrice:"$13,345/",
         originalPrice:"$16,345/",
         img:search5,
+        departure_date:"12.02.24",
+        rating:5,
+        seats_left:20,
+        company_name:"By Ma kali Travels "
     },
     {
         id:6,
@@ -69,6 +92,10 @@ const searchResultData =[
         offerPrice:"$13,345/",
         originalPrice:"$16,345/",
         img:search6,
+        departure_date:"12.02.24",
+        rating:5,
+        seats_left:20,
+        company_name:"By Ma kali Travels "
     }
 ]
 
@@ -87,6 +114,7 @@ export default function SearchResult() {
 const handleCompareCheckClick=()=>{
 dispatch(toggleIsCompareCheckboxChecked())
 }
+const selectedCards = useSelector((state) => state.isAnyCard.selectedCards);
 
 
   return (
@@ -143,10 +171,26 @@ dispatch(toggleIsCompareCheckboxChecked())
 {
   isAnyCardSelected
   &&
-  <div className=" position-fixed w-100" style={{bottom:"0"}}>
+  <div  className=" position-fixed  w-100" style={{bottom:"0"}}>
   <CompareBox/>
   </div>
 }
+
+
+<div className="modal fade mt-5" id="comparisionModal" aria-labelledby="comparisionModalLabel" >
+  <div className="modal-dialog modal-xl">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title w-100 text-center fs-3 fw-bold  " id="comparisionModalLabel">Comparison Result </h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className=" mx-5 modal-body d-flex justify-content-between">
+      <ComparisionCard selectedCards={selectedCards} />
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
     </>

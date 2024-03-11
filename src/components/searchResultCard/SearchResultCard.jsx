@@ -75,9 +75,9 @@ const handleCardSelection = (searchResult, isChecked) => {
                 
     
                 <div className="d-flex px-sm-3 px-md-0 px-lg-0 flex-lg-column justify-content-between">
-                  <span className='search_result_by mt-1 mt-sm-1 mt-md-1 mt-lg-0 px-0 px-md-2 px-lg-0 fw-semibold'>By Maa Kali Travel</span>
+                  <span className='search_result_by mt-1 mt-sm-1 mt-md-1 mt-lg-0 px-0 px-md-2 px-lg-0 fw-semibold'>{searchResult.company_name}</span>
                   <div className="d-flex px-0 px-md-2 px-lg-0 ">
-                    <p className='fw-bold only_seats mb-1'>Seats:</p> <p className='px-1 mb-1 fw-semibold search_result_seat'><span className='fw-bold count_seat '>30</span> Seats left </p>
+                    <p className='fw-bold only_seats mb-1'>Seats:</p> <p className='px-1 mb-1 fw-semibold search_result_seat'><span className='fw-bold count_seat '>{searchResult.seats_left}</span> Seats left </p>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ const handleCardSelection = (searchResult, isChecked) => {
 
               </div>
               <p className='stay_included mb-0 fw-semibold date-grey'>Stay Included This Packages</p>
-              <div className="d-flex flex-wrap mt-0 mt-sm-4 mt-md-4 mt-lg-4 justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-between align-items-baseline mb-3 mb-sm-0 mb-md-0 mb-lg-0 mt-2">
+              <div className="d-flex flex-wrap mt-0 mt-sm-4 mt-md-4 mt-lg-0 justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-between align-items-baseline mb-3 mb-sm-0 mb-md-0 mb-lg-0 mt-2">
                 <div className="d-flex ">
                   <div className="me-2 form-check">
                     <input className="form-check-input d-md-none " type="radio" name="flexRadioDefault" id="flexRadioDefault1" />

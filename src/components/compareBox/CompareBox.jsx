@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearSelectedCards, removeSelectedCard, setIsAnyCardSelectedFalse } from '../../store/slices/isAnyCardSelected';
 import { setCompareCheckboxFalse } from '../../store/slices/isCompareCheckbox';
 import { TiDelete } from "react-icons/ti";
-
+import ComparisionCard from '../comparisonCard/ComparisionCard'
 export default function CompareBox() {
 
  
@@ -24,8 +24,10 @@ const handleRemoveSelectedCard=(index)=>{
   dispatch(removeSelectedCard(index))
 }
 
-  return (
-    <div className="container-fluid compare pos py-3">
+  return (<>
+  
+
+    <div className="position-relative container-fluid compare pos py-3" style={{zIndex:"10"}}>
       <div className="container">
         <div className="d-flex justify-content-between">
           <h5 className='fw-bold'>Add to Compare</h5>
@@ -40,7 +42,7 @@ const handleRemoveSelectedCard=(index)=>{
                   <img style={{height:"70px",width:"70px"}} src={card.img || selectToAdd} alt='Add' />
                   <div className="d-flex flex-column">
                   <h6 className='ms-3 me-3 mb-0'>{card.name || "Select to add"}</h6>
-                  <p style={{fontSize:"12px"}} className=' mt-1 ms-3 mb-0' >12 Days 11 Nights</p>
+                  <p style={{fontSize:"12px"}} className=' compare_para fw-semibold  mt-1 ms-3 mb-0' >{card.duration}</p>
                   </div>
 
                   <TiDelete onClick={()=>{handleRemoveSelectedCard(card.id)}}  className='position-absolute top-0'  role='button' style={{fontSize:"30px",color:"grey",right:"0"}}  />
@@ -50,7 +52,7 @@ const handleRemoveSelectedCard=(index)=>{
             </div>
           </div>
           <div className="col-lg-2 my-2 my-md-2 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-center">
-          <button className={`btn fw-bold compare_btn${selectedCards.length <= 2 ? " disabled" : ""}`}>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#comparisionModal" className={`btn fw-bold compare_btn${selectedCards.length <= 2 ? " disabled" : ""}`}>
   Compare Now
 </button>
 
@@ -58,5 +60,9 @@ const handleRemoveSelectedCard=(index)=>{
         </div>
       </div>
     </div>
+
+    
+ 
+    </>
   );
 }

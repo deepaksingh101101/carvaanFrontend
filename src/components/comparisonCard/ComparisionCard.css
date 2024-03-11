@@ -1,0 +1,16 @@
+#body .comparison_card{
+    font-family: var(--font-primary);
+}
+
+#body .comp_para_green{
+    color: var(--success-600);
+}
+
+#body .compare_para_grey{
+    color: var(--search-card-by);
+}
+
+#body .book_now_btn{
+    background: var(--btn-pink-secondary);
+    color: var(--white);
+}
