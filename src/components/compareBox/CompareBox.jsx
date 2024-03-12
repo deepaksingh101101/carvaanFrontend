@@ -27,18 +27,18 @@ const handleRemoveSelectedCard=(index)=>{
   return (<>
   
 
-    <div className="position-relative container-fluid compare pos py-3" style={{zIndex:"10"}}>
+    <div className="position-relative container-fluid compare pos pt-3" style={{zIndex:"10"}}>
       <div className="container">
         <div className="d-flex justify-content-between">
-          <h5 className='fw-bold'>Add to Compare</h5>
+          <h6 className='fw-bold'>Add to Compare</h6>
           <AiOutlineCloseSquare onClick={handleCloseCompare} style={{ fontSize: "30px" }} />
         </div>
-        <p className='fw-semibold'>Choose Max 3 Items</p>
+        <p  className='fw-semibold mb-0 chose_max_para '>Choose Max 3 Items</p>
         <div className="row d-flex justify-content-between">
           <div className="col-lg-10 d-flex align-items-center justify-content-center">
             <div className="row d-flex w-100 ">
               {selectedCards.map((card, index) => (
-                <div key={index} className=" position-relative my-2  mx-lg-2 col-lg-4 py-3 d-flex comparison1 align-items-center ">
+                <div key={index} className=" position-relative my-1  mx-lg-2 col-lg-4 py-3 d-flex comparison1 align-items-center ">
                   <img className='object-fit-cover' style={{height:"70px",width:"70px"}} src={card.img || selectToAdd} alt='Add' />
                   <div className="d-flex flex-column">
                   <h6 className='ms-3 me-3 mb-0 compare_small_card_para'>{card.name || "Select to add"}</h6>
@@ -51,7 +51,7 @@ const handleRemoveSelectedCard=(index)=>{
               ))}
             </div>
           </div>
-          <div className="col-lg-2 my-2 my-md-2 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-center">
+          <div className="col-lg-2 my-1 my-md-2 my-lg-0 d-flex justify-content-center justify-content-lg-end align-items-center">
           <button type="button" data-bs-toggle="modal" data-bs-target="#comparisionModal" className={`btn fw-bold compare_btn${selectedCards.length <= 2 ? " disabled" : ""}`}>
   Compare Now
 </button>
