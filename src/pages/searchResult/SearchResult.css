@@ -39,3 +39,14 @@ border: 1px solid var(--gray-200);
     max-width: 100%;
 }
 }
+@media all and (max-width: 575px) {
+
+#body .compare_footer_table{
+   display: none !important;
+}
+}
+
+
+#body .compare_modal_title{
+    font-size: clamp(14px ,1.2vw,18px) !important;
+}

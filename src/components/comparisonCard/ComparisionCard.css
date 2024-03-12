@@ -4,10 +4,14 @@
 
 #body .comp_para_green{
     color: var(--success-600);
+    font-size: clamp(7px, 1vw, 18px) !important;
+
 }
 
 #body .compare_para_grey{
     color: var(--search-card-by);
+    font-size: clamp(7px, 1vw, 18px) !important;
+
 }
 
 #body .book_now_btn{
@@ -16,9 +20,65 @@
 }
 
 #body .compare_trip_name{
-    font-size: clamp(10px,1vw,20px);
+    font-size: clamp(7px,1vw,20px);
 }
 
-#body .compare_price p {
-    font-size: clamp(6px, 1vw, 18px) !important;
+#body .clamp_compare_right_text{
+    font-size: clamp(7px, 1vw, 18px) !important;
+
+}
+
+
+#body .compare_footer_table{
+    display: none ;
+  }
+
+@media all and (max-width: 700px) {
+    #body .compare_card{
+        height: 150px !important;
+    }
+
+    #body .comparison_card{
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+
+    #body .calander_icon{
+        font-size: 10px !important;
+    }
+    
+}
+
+
+
+@media all and (max-width: 528px) {
+    #body .compare_card{
+        height: 100px !important;
+    }
+    #body .calander_icon{
+        font-size: 10px !important;
+    }
+
+  #body .compare_none{
+    display: none !important;
+  }
+
+  #body .compare_footer_table{
+    display: block !important;
+  }
+
+    
+}
+
+
+@media all and (max-width: 456px) {
+   
+    #body .comparison_card{
+        margin-left: 5px !important;
+        margin-right: 5px !important;
+    }
+
+    #body .book_now_btn{
+        height: 22px;
+    }
 }

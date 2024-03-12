@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleIsCompareCheckboxChecked } from '../../store/slices/isCompareCheckbox';
 import ComparisionCard from '../../components/comparisonCard/ComparisionCard';
 // import { setIsAnyCardSelectedTrue } from '../../store/slices/isAnyCardSelected';
+import ReactStars from 'react-stars'
 
 const searchResultData =[
     {
@@ -181,13 +182,94 @@ const selectedCards = useSelector((state) => state.isAnyCard.selectedCards);
   <div  className="modal-dialog comparison_modal modal-xl">
     <div className="modal-content">
       <div className="modal-header">
-        <h1 className="modal-title w-100 text-center fs-3 fw-bold  " id="comparisionModalLabel">Comparison Result </h1>
+        <h1  className="modal-title compare_modal_title w-100 text-center fs-3 fw-bold  " id="comparisionModalLabel">Comparison Result </h1>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="px-0 mx-0 mx-lg-5 modal-body d-flex justify-content-between">
       <ComparisionCard selectedCards={selectedCards} />
       </div>
-      
+
+      <div className="modal-footer m-0 compare_footer_table d-sm-none d-md-none d-lg-none d-flex justify-content-center">
+<h5 className='compare_modal_title text-center'>Detailed Comparision</h5>
+
+<table className="table">
+  <thead>
+  <tr>
+  <th style={{ fontSize: "9px" }} scope="col">Title</th>
+  {selectedCards.map((card, index) => (
+    <th  key={index} style={{ fontSize: "8px" }} scope="col">{card.name.split('(')[0]}</th>
+  ))}
+</tr>
+
+
+    <tr>
+      <th style={{ fontSize: "9px" }} scope="col">Offer Price</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.offerPrice}</td>
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "9px" }} scope="col">Original Price</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.originalPrice}</td>
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "9px" }} scope="col">Duration</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.duration}</td>
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "9px" }} scope="col">Ratings</th>
+      {selectedCards.map((card, index) => (
+        <  >
+        {/* <div className="d-flex  "> */}
+        <td className='' key={index} style={{ fontSize: "10px" }}>
+        <ReactStars
+  count={5}
+  size={10}
+  value={card.rating}
+  edit={false}
+  color2={'#ffd700'} /></td>
+        {/* </div> */}
+       
+        
+        </>
+        
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "10px" }} scope="col">Travel Agent Name</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.company_name}</td>
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "10px" }} scope="col">Departure Date</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.departure_date}</td>
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "10px" }} scope="col">Seats Left</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.seats_left}</td>
+      ))}
+    </tr>
+    <tr>
+      <th style={{ fontSize: "10px" }} scope="col">Offer Percentage</th>
+      {selectedCards.map((card, index) => (
+        <td key={index} style={{ fontSize: "10px" }}>{card.offerPercentage}</td>
+      ))}
+    </tr>
+  </thead>
+</table>
+
+
+
+
+         </div>
     </div>
   </div>
 </div>
