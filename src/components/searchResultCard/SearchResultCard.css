@@ -26,6 +26,7 @@ font-style: italic;
 #body .search_result_title{
     color: var(--dark-blue-text);
     font-weight: 600;
+    font-size: clamp(20px,1vw,20px);
 }
 
 
@@ -89,7 +90,7 @@ background: var(--white);
         font-size: 8px !important ;
     }
        #body .dprice,#body .stay_included, #body .search_result_date,#body .search_result_duration,#body .search_result_title{
-        font-size: 10px !important ;
+        font-size: 12px !important ;
     }
     #body .search_result_image{
         height: 180px !important;
@@ -164,6 +165,9 @@ background: var(--white);
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 border: none;
-/* background: rgba(96, 104, 139, 0.432); */
 box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+#body .seats_clamp{
+font-size: clamp(15px, 1vw, 16px);
 }

@@ -70,14 +70,34 @@ const handleCardSelection = (searchResult, isChecked) => {
 
             <div className="col-md-12  px-0 px-lg-2 col-lg-3">
       
-              <div className="d-flex flex-column  px-3 py-3 py-sm-0 py-md-0 py-lg-0 px-sm-0 py-sm-0">
-                <img className='object-fit-cover my-0 my-lg-2 search_result_image' src={searchResult.img} alt='searchResult1' />
-                
+              <div className="d-flex flex-column position-relative px-3 py-3 py-sm-0 py-md-0 py-lg-0 px-sm-0 py-sm-0">
+                <img className='object-fit-cover  my-0 my-lg-2 search_result_image'  src={searchResult.img} alt='searchResult1' />
+
+                {isCompareCheckboxChecked &&
+  <input  
+
+  className={` d-block d-lg-none position-absolute  top-0 form-check-input compare_card_check mt-0 fs-2 top-0${selectedCards.length === 3 ? " disabled" : ""}`} 
+  onChange={(e) => handleCardSelection(searchResult, e.target.checked)} // Pass isChecked parameter
+  style={{border: "2px solid red",right:"0"}}  
+  type="checkbox" 
+  value="" 
+  checked={selectedCards.some(card => card.id === searchResult.id)} // Check if searchResult id is present in selectedCards
+  id="flexCheckChecked" 
+  disabled={selectedCards.length === 3} // Ensure input is disabled when selectedCards length is 3
+/>
+}
     
+
+
+
+
                 <div className="d-flex px-sm-3 px-md-0 px-lg-0 flex-lg-column justify-content-between">
                   <span className='search_result_by mt-1 mt-sm-1 mt-md-1 mt-lg-0 px-0 px-md-2 px-lg-0 fw-semibold'>{searchResult.company_name}</span>
                   <div className="d-flex px-0 px-md-2 px-lg-0 ">
-                    <p className='fw-bold only_seats mb-1'>Seats:</p> <p className='px-1 mb-1 fw-semibold search_result_seat'><span className='fw-bold count_seat '>{searchResult.seats_left}</span> Seats left </p>
+                    <p className='fw-bold only_seats seats_clamp mb-1 '>Seats:</p>
+                     <p className='px-1 mb-1 fw-semibold search_result_seat seats_clamp'>
+                      <span className='fw-bold count_seat '>{searchResult.seats_left}</span>
+                       Seats left </p>
                   </div>
                 </div>
               </div>
@@ -112,7 +132,7 @@ const handleCardSelection = (searchResult, isChecked) => {
                   </div>
                   {isCompareCheckboxChecked &&
   <input 
-  className={`form-check-input compare_card_check mt-0 fs-2 top-0${selectedCards.length === 3 ? " disabled" : ""}`} 
+  className={` d-none d-lg-block form-check-input compare_card_check mt-0 fs-2 top-0${selectedCards.length === 3 ? " disabled" : ""}`} 
   onChange={(e) => handleCardSelection(searchResult, e.target.checked)} // Pass isChecked parameter
   style={{left: "0px", border: "2px solid red"}}  
   type="checkbox" 
@@ -121,8 +141,6 @@ const handleCardSelection = (searchResult, isChecked) => {
   id="flexCheckChecked" 
   disabled={selectedCards.length === 3} // Ensure input is disabled when selectedCards length is 3
 />
-
-
 }
 
 
@@ -145,7 +163,7 @@ const handleCardSelection = (searchResult, isChecked) => {
                     <label className="fw-semibold form-check-label" htmlFor="flexRadioDefault2">Dorm</label>
                   </div>
                 </div>
-                <div className="me-0 me-md-2 me-lg-2 d-flex justify-content-between justify-content-sm-between last_card_btn justify-content-md-start justify-content-lg-start">
+                <div className="me-0 me-md-2 me-lg-2 mt-lg-3 d-flex justify-content-between justify-content-sm-between last_card_btn justify-content-md-start justify-content-lg-start">
                   <button className='btn mx-1 search_result_view'>View Details</button>
                   <button className='btn mx-1 search_result_book'>Book Now</button>
                 </div>

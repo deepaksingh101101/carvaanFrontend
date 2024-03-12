@@ -38,10 +38,10 @@ const handleRemoveSelectedCard=(index)=>{
           <div className="col-lg-10 d-flex align-items-center justify-content-center">
             <div className="row d-flex w-100 ">
               {selectedCards.map((card, index) => (
-                <div key={index} className=" position-relative my-2 mx-3 col-lg-4 py-3 d-flex comparison1 align-items-center justify-content-center">
-                  <img style={{height:"70px",width:"70px"}} src={card.img || selectToAdd} alt='Add' />
+                <div key={index} className=" position-relative my-2  mx-lg-2 col-lg-4 py-3 d-flex comparison1 align-items-center ">
+                  <img className='object-fit-cover' style={{height:"70px",width:"70px"}} src={card.img || selectToAdd} alt='Add' />
                   <div className="d-flex flex-column">
-                  <h6 className='ms-3 me-3 mb-0'>{card.name || "Select to add"}</h6>
+                  <h6 className='ms-3 me-3 mb-0 compare_small_card_para'>{card.name || "Select to add"}</h6>
                   <p style={{fontSize:"12px"}} className=' compare_para fw-semibold  mt-1 ms-3 mb-0' >{card.duration}</p>
                   </div>
 

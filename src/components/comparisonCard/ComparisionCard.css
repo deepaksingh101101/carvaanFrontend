@@ -14,3 +14,11 @@
     background: var(--btn-pink-secondary);
     color: var(--white);
 }
+
+#body .compare_trip_name{
+    font-size: clamp(10px,1vw,20px);
+}
+
+#body .compare_price p {
+    font-size: clamp(6px, 1vw, 18px) !important;
+}

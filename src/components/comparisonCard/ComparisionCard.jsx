@@ -4,12 +4,12 @@ import ReactStars from 'react-stars';
 
 export default function ComparisionCard({ selectedCards }) {
   return selectedCards.map((card, index) => (
-    <div key={index} className="card comparison_card" style={{ width: "19rem" }}>
+    <div key={index} className="card mx-0 mx-md-2 mx-lg-2 mx-lg-0 comparison_card" style={{ width: "19rem" }}>
       <img src={card.img} style={{ height: "260px" }} className="p-2 card-img-top object-fit-cover" alt="..." />
       <div className="card-body px-2 pb-2 pt-0">
-        <h6 className="card-title fw-semibold">{card.name}</h6>
+        <h6 className="card-title compare_trip_name fw-semibold">{card.name}</h6>
 
-        <div className="d-flex">
+        <div className="d-flex compare_price">
           <p className='mb-1' style={{ fontSize: "14px", fontWeight: "500" }}>Price:</p>
           <p className='ms-1 mb-1 fw-semibold comp_para_green' style={{ fontSize: "14px" }}>INR {card.offerPrice}</p>
           <s className='ms-1 fw-semibold compare_para_grey' style={{ fontSize: "14px" }}>INR {card.originalPrice}</s>

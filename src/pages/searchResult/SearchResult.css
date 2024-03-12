@@ -33,3 +33,9 @@ border: 1px solid var(--gray-200);
 }
 
 
+@media all and (max-width: 1200px) {
+
+#body .comparison_modal{
+    max-width: 100%;
+}
+}

@@ -178,13 +178,13 @@ const selectedCards = useSelector((state) => state.isAnyCard.selectedCards);
 
 
 <div className="modal fade mt-5" id="comparisionModal" aria-labelledby="comparisionModalLabel" >
-  <div className="modal-dialog modal-xl">
+  <div  className="modal-dialog comparison_modal modal-xl">
     <div className="modal-content">
       <div className="modal-header">
         <h1 className="modal-title w-100 text-center fs-3 fw-bold  " id="comparisionModalLabel">Comparison Result </h1>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div className=" mx-5 modal-body d-flex justify-content-between">
+      <div className="px-0 mx-0 mx-lg-5 modal-body d-flex justify-content-between">
       <ComparisionCard selectedCards={selectedCards} />
       </div>
       
