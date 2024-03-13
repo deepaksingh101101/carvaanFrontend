@@ -10,38 +10,20 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { postApi } from '../../helpers/requestHelpers';
 import LoaderComponent from '../../components/loader/LoaderComponent';
+import ErrorMessage from '../../components/errorMessage/ErrorMessage';
 
 
 export default function CustomPackages() {
   const [adultCount, setAdultCount] = useState(0);
   const [childCount, setChildCount] = useState(0);
 
+
 const [loader, setLoader] = useState(false)
 
-  const [hotel_ratings,setHotel_ratings]=useState([])
-  const [meal_types,setMeal_types]=useState([])
   
-  const handleAddRating = (value) => {
-    if (hotel_ratings.includes(value)) {
-      // If value already exists, remove it from the array
-      const updatedRatings = hotel_ratings.filter((rating) => rating !== value);
-      setHotel_ratings(updatedRatings);
-    } else {
-      // If value doesn't exist, add it to the array
-      setHotel_ratings([...hotel_ratings, value]);
-    }
-  };
+
   
-  const handleAddMeals = (value) => {
-    if (meal_types.includes(value)) {
-      // If value already exists, remove it from the array
-      const updatedRatings = meal_types.filter((rating) => rating !== value);
-      setMeal_types(updatedRatings);
-    } else {
-      // If value doesn't exist, add it to the array
-      setMeal_types([...meal_types, value]);
-    }
-  };
+
   
   const Toast = Swal.mixin({
     toast: true,
@@ -63,8 +45,10 @@ const navigate=useNavigate();
     phone_number: '',
     destination: '',
     departure_date: '',
-    duration_days: 0,
+    duration_days: null,
     message:'',
+    hotel_ratings:[],
+    meal_types:[],
   };
 
 
@@ -72,8 +56,8 @@ const navigate=useNavigate();
     setLoader(true)
 const data={
   ...values,
-  meal_types,
-  hotel_ratings,
+  // meal_types,
+  // hotel_ratings,
   adult_seats_required:adultCount,
   child_seats_required:childCount
 }
@@ -170,6 +154,7 @@ try {
                  onChange={validation.handleChange}
                  onBlur={validation.handleBlur}
                  value={validation.values.user_name || ''}
+                 required
                className="form-control input_padding" id="exampleInputName1" />
               </div>
               <div className="mb-3">
@@ -178,6 +163,7 @@ try {
                  onBlur={validation.handleBlur}
                  value={validation.values.user_email || ''}
                  name='user_email'
+                 required
              placeholder='Your Email'   className="form-control input_padding" id="exampleInputEmail1" />
               </div>
               <div className="mb-3">
@@ -185,13 +171,16 @@ try {
                  onChange={validation.handleChange}
                  onBlur={validation.handleBlur}
                  value={validation.values.phone_number || ''}
+                 required
                 name="phone_number" placeholder='Your Phone'  className="form-control input_padding" id="exampleInputNumber1" />
+                
               </div>
               <div className="mb-3">
-                <input type="text" 
+                <input type="number" 
                  onChange={validation.handleChange}
                  onBlur={validation.handleBlur}
                  value={validation.values.destination || ''}
+                 required
                 name="destination" 
                 placeholder='Your Destination'  className="form-control input_padding" id="exampleInputDestination1" />
               </div>
@@ -200,6 +189,7 @@ try {
                 <input placeholder='Enter Departure Date'  type="date"
                   onChange={validation.handleChange}
                   onBlur={validation.handleBlur}
+                  required
                   value={validation.values.departure_date || ''}
                  name="departure_date" 
  
@@ -210,6 +200,7 @@ try {
                  name="duration_days"
                  onChange={validation.handleChange}
                  onBlur={validation.handleBlur}
+                 required
                  value={validation.values.duration_days || ''}
                  placeholder='Enter Days' min="1"  className="form-control input_padding" id="exampleInputDays1" />
               </div>
@@ -245,19 +236,33 @@ try {
                 <h6 className='grey_text' style={{userSelect:'none'}}>Select Hotel Rating</h6>
                 <div className="starCheckBox grey_text d-flex justify-content-between align-items-center px-1 ">
                 <div className="form-check  my-1 my-sm-1 my-md-1 my-lg-3">
-  <input className="form-check-input" value="3-Rating"
-  onChange={(e)=>handleAddRating(e.target.value)}
+  <input className="form-check-input"
+   value="3-Rating"
+  // onChange={(e)=>handleAddRating(e.target.value)}
+  onChange={validation.handleChange}
+                 onBlur={validation.handleBlur}
+                 required={validation.values.hotel_ratings.length<1}
+                //  value={validation.values.duration_days || ''}
+              
   type="checkbox" 
   name="hotel_ratings" id="flexRadioDefault1"/>
   <label className="form-check-label"   htmlFor="flexRadioDefault">
    3 Rating
   </label>
 </div>
+
+
+
 <div className="form-check  my-1 my-sm-1 my-md-1 my-lg-3">
-  <input className="form-check-input" value="4-Rating" 
-  onChange={(e)=>handleAddRating(e.target.value)}
+  <input className="form-check-input"
+   value="4-Rating" 
+  // onChange={(e)=>handleAddRating(e.target.value)}
   type="checkbox" 
-  
+  onChange={validation.handleChange}
+                 onBlur={validation.handleBlur}
+                 required={validation.values.hotel_ratings.length<1}
+                //  value={validation.values.duration_days || ''}
+              
   name="hotel_ratings" id="flexRadioDefault" />
   <label className="form-check-label" htmlFor="flexRadioDefault2">
 
@@ -265,13 +270,23 @@ try {
   </label>
 </div>
 <div className="form-check">
-  <input className="form-check-input" value="5-Rating" type="checkbox" 
-  onChange={(e)=>handleAddRating(e.target.value)}
+  <input className="form-check-input" 
+  value="5-Rating"
+  onChange={validation.handleChange}
+                 onBlur={validation.handleBlur}
+                 required={validation.values.hotel_ratings.length<1}
+                //  value={validation.values.duration_days || ''}
+              
+   type="checkbox" 
+  // onChange={(e)=>handleAddRating(e.target.value)}
   name="hotel_ratings" id="flexRadioDefault3" />
   <label className="form-check-label" htmlFor="flexRadioDefault3">
     5 Rating
   </label>
 </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                <ErrorMessage message="Please Select Atleast one"/>
                 </div>
               </div>
 
@@ -285,18 +300,24 @@ try {
                 <div className="starCheckBox grey_text d-flex justify-content-between px-1 ">
                 <div className="form-check my-1 my-sm-1 my-md-1 my-lg-3">
                <input className="form-check-input" type="checkbox" 
-               onChange={(e)=>handleAddMeals(e.target.value)}
+              //  onChange={(e)=>handleAddMeals(e.target.value)}
+              onChange={validation.handleChange}
+              onBlur={validation.handleBlur}
+              required={validation.values.meal_types.length<1}
                value="No Meals"
-               name="flexRadioDefault1" id="flexRadioDefault4"/>
+               name="meal_types" id="flexRadioDefault4"/>
                <label className="form-check-label" htmlFor="flexRadioDefault4">
                 No Meal
                </label>
             </div>
             <div className="form-check my-1 my-sm-1 my-md-1 my-lg-3">
               <input className="form-check-input" type="checkbox" 
-               onChange={(e)=>handleAddMeals(e.target.value)}
+              //  onChange={(e)=>handleAddMeals(e.target.value)}
+              onChange={validation.handleChange}
+              onBlur={validation.handleBlur}
+              required={validation.values.meal_types.length<1}
                value="Only Breakfast"
-               name="flexRadioDefault1" id="flexRadioDefault4" />
+               name="meal_types" id="flexRadioDefault4" />
               <label className="form-check-label" htmlFor="flexRadioDefault5">
                 Only Breakfast
               </label>
@@ -305,15 +326,14 @@ try {
                 </div>
 
 
-
-
-
-
                 <div className="starCheckBox grey_text d-flex flex-wrap justify-content-between px-1">
                 <div className="form-check my-1 my-sm-1 my-md-1 my-lg-3">
                <input className="form-check-input" type="checkbox"
-               onChange={(e)=>handleAddMeals(e.target.value)}
-               name="flexRadioDefault1" 
+              //  onChange={(e)=>handleAddMeals(e.target.value)}
+              onChange={validation.handleChange}
+              onBlur={validation.handleBlur}
+              required={validation.values.meal_types.length<1}
+               name="meal_types" 
                value='Breakfast Lunch or Dinner'
                id="flexRadioDefault4"/>
                <label className="form-check-label" htmlFor="flexRadioDefault5">
@@ -324,8 +344,11 @@ try {
                 <input className="form-check-input"
                 value="All Meals"
                 type="checkbox" 
-                onChange={(e)=>handleAddMeals(e.target.value)}
-                name="flexRadioDefault1" id="flexRadioDefault6" />
+                // onChange={(e)=>handleAddMeals(e.target.value)}
+                onChange={validation.handleChange}
+                onBlur={validation.handleBlur}
+                required={validation.values.meal_types.length<1}
+                name="meal_types" id="flexRadioDefault6" />
                  <label className="form-check-label" htmlFor="flexRadioDefault6">
                 All Meals
                 </label>
