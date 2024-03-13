@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import './OtpBox.css';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import { postApi } from '../../helpers/requestHelpers';
+import { setIsAuthenticated } from '../../store/slices/isAuthenticated';
+import {  useDispatch } from 'react-redux';
 
 export default function OtpBox({ userEmail }) {
   const navigate = useNavigate();
@@ -35,6 +37,8 @@ export default function OtpBox({ userEmail }) {
   const getOtpAsString = () => {
     return otp.join('');
   };
+  const dispatch = useDispatch();
+
 
   const handleSubmitOtp = async (e) => {
     e.preventDefault();
@@ -45,19 +49,21 @@ export default function OtpBox({ userEmail }) {
     } else {
       setShowOtpError(false);
       try {
-        const response = await postApi("post", "/users/verify_otp", { email: userEmail, otp: otpString, remember: true });
-        if(response){
+        console.log(userEmail,otpString,)
+        const response = await postApi("post", "/users/verify_otp", { email: userEmail.email, otp: otpString, remember: true });
+        console.log(response)
+        if(response.data.user.email){
           localStorage.setItem("accessToken",response.data.accessToken)
           localStorage.setItem("refreshToken",response.data.refreshToken)
           setWrongOtpError(false)
+          dispatch(setIsAuthenticated())
           setIsDataBsAdded(true)
-          navigate('/')
         }
         else{
           setWrongOtpError(true)
         }
       } catch (error) {
-        console.error("Error sending OTP:", error);
+        setWrongOtpError(true)
       }
     }
   };

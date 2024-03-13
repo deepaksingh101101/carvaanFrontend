@@ -1,3 +1,7 @@
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { GoogleLogin } from '@react-oauth/google';
+import { jwtDecode } from "jwt-decode";
+import {  useDispatch } from 'react-redux';
 
 import './LoginModal.css'
 import google from '../../assets/home/google.png'
@@ -8,6 +12,7 @@ import { useState } from 'react';
 import OtpBox from '../otpBox/OtpBox';
 import ErrorMessage from '../errorMessage/ErrorMessage'
 import  {useForm} from 'react-hook-form'
+import { setIsAuthenticated } from '../../store/slices/isAuthenticated';
 export default function LoginModal() {
 
   const {register,handleSubmit,formState:{errors}}=useForm()
@@ -23,23 +28,40 @@ const handleSendOtp =  (data) => {
     // setShowEmailInputError(false);
     setShowOtpBox(true);
     try {
-      const response =  postApi("post", "/users/send_otp_on_email", { data });
+      const response =  postApi("post", "/users/send_otp_on_email", { "email":data });
       console.log(response);
     } catch (error) {
       console.error("Error sending OTP:", error);
     }
-  
 };
+
+const dispatch = useDispatch();
+const [modal, setModal] = useState(true)
+const handleGoogleLogin=async (email)=>{
+  try {
+    
+    const response = await postApi("post", "/users/social_login", { "email":email });
+    console.log(response)
+    if(response.data.user.email){
+      localStorage.setItem("accessToken",response.data.accessToken)
+      localStorage.setItem("refreshToken",response.data.refreshToken)
+      dispatch(setIsAuthenticated())
+      setModal(false)
+    }
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 const formSubmit=(data)=>{
   setUserEmail(data)
-  handleSendOtp(data)
+  handleSendOtp(data.email)
 console.log(data)
 }
 
   return (
  (
-        <div className="modal fade " id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+        <div className="modal fade  " id="exampleModalCenter" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
             <div className="modal-dialog modal-dialog-centered " role="document">
                 <div className="modal-content px-3 ">
                     <div className="modal-header border-0 text-center">
@@ -102,21 +124,39 @@ console.log(data)
  
   {/* <button type="submit" className="btn btn-primary">Submit</button> */}
 
-  <div className="separator login_label mt-3 ">or use one of these options</div>
+  <div className="separator login_label my-3 ">or use one of these options</div>
 
-  <div className="d-flex mt-3 justify-content-center login_label">
+  {/* <div className="d-flex mt-3 justify-content-center login_label">
 <button type="button"  className="btn mt-1 w-100  modal_height_btn">
 <img src={google} className='' style={{width:"40px", height:"26px",paddingBottom:"2px"}} alt='G'/>
 
     Continue with Google </button>
-</div>
+</div> */}
 
-<div className="d-flex mt-3 justify-content-center login_label">
+
+<GoogleOAuthProvider clientId="491933368128-pui22868ftilakfnf1ju2tu8mnhnquae.apps.googleusercontent.com">
+<GoogleLogin
+  onSuccess={credentialResponse => {
+    const decoded = jwtDecode(credentialResponse.credential);
+    handleGoogleLogin(decoded.email)
+  }}
+  width={400}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+/>
+  </GoogleOAuthProvider>
+
+
+
+{/* <div className="d-flex mt-3 justify-content-center login_label">
 <button type="button"  className="btn mt-2 w-100 py-0 facebook_bg modal_height_btn">
 <img src={facebook} className='' style={{width:"40px", height:"40px",paddingBottom:"2px"}} alt='G'/>
 
     Continue with Facebook </button>
-</div>
+</div> */}
+
+
 </form>
                     </div>
                     <div className="mb-4">

@@ -4,16 +4,19 @@ import avtar from '../../assets/profile/avtar.png'
 import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { FaBars } from "react-icons/fa6";
+import { useSelector, useDispatch } from 'react-redux';
 
 import { useState, useEffect } from 'react';
+import { setIsAuthenticated } from '../../store/slices/isAuthenticated';
 
 export default function Navbar(props) {
     const [btnActive, setBtnActive] = useState('btn2');
     const [scrolled, setScrolled] = useState(false);
     const [hasLocalStorage, setHasLocalStorage] = useState(false);
 
-
-
+    const dispatch = useDispatch();
+    const isLoggedIn = useSelector((state) => state.isAuthenticated.isLoggedIn);
+  
     const handleBtnClick = (btn) => {
         setBtnActive(btn);
     };
@@ -21,8 +24,9 @@ export default function Navbar(props) {
     useEffect(() => {
         if (localStorage.getItem("accessToken")) {
             setHasLocalStorage(true)
+            dispatch(setIsAuthenticated())
         }
-    }, [hasLocalStorage])
+    }, [isLoggedIn])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -121,7 +125,7 @@ export default function Navbar(props) {
 
 
                             {
-                                hasLocalStorage ? (<div className="d-flex justify-content-between align-items-center me-4">
+                                isLoggedIn ? (<div className="d-flex justify-content-between align-items-center me-4">
                                     <img className='' style={{ width: "40px", height: "40px", borderRadius: "50%" }} src={avtar} alt='profile' />
                                     <button
                                         type='button'
