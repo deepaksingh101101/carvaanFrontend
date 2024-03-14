@@ -85,3 +85,18 @@ color: var(--white) !important;
   border: none;
   z-index: 10;
 }
+
+
+
+#body .profile_hover{
+font-family: var(--font-primary);
+}
+
+
+#body .text_grey{
+  color: var(--gray-200);
+} 
+
+#body .gray_100{
+  color: var(--gray-100);
+}

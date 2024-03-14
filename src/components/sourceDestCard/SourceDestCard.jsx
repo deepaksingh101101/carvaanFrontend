@@ -36,6 +36,47 @@ export default function SourceDestCard() {
     };
   }, [fromBoxRef]);
 
+  const from=[{
+    id:1,
+    name:"Banglore"
+  },
+  {
+    id:2,
+    name:"Chennai"
+  },
+  {
+    id:3,
+    name:"Cochin"
+  },
+  {
+    id:4,
+    name:"Hyderabad"
+  },
+  {
+    id:5,
+    name:"Kolkata"
+  },
+  {
+    id:6,
+    name:"Manali"
+  }
+  ,
+  {
+    id:7,
+    name:"Mumbai"
+  },
+  {
+    id:8,
+    name:"Rajasthan"
+  },
+  {
+    id:9,
+    name:"Punjab"
+  }
+
+]
+
+
   return (
     <>
       <div className="container source ">
@@ -78,10 +119,10 @@ export default function SourceDestCard() {
                           style={{ fontSize: "20px" }}
                           className="me-2 blue_secondary"
                         />
-                        <span className="m-0 ">Use Current Location</span>
+                        <span style={{fontSize:"14px"}} className="m-0 ">Use Current Location</span>
                       </div>
-                      <div className="d-flex my-3 flex-column justify-content-center">
-                        <h6>TOP SEARCHES</h6>
+                      <div className="d-flex my-2 flex-column justify-content-center">
+                        <h6 style={{fontSize:"15px"}}>TOP SEARCHES</h6>
 
                         <p role="button">Bangalore</p>
                         <p role="button">Chennai</p>

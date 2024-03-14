@@ -5,6 +5,12 @@ import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 import { FaBars } from "react-icons/fa6";
 import { useSelector, useDispatch } from 'react-redux';
+import { FaRegCircleUser } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa6";
+import { FiGlobe } from "react-icons/fi";
+import { TbCoinRupee } from "react-icons/tb";
+import { MdHelpOutline } from "react-icons/md";
+import { MdExitToApp } from "react-icons/md";
 
 import { useState, useEffect } from 'react';
 import { setIsAuthenticated } from '../../store/slices/isAuthenticated';
@@ -126,7 +132,8 @@ export default function Navbar(props) {
 
                             {
                                 isLoggedIn ? (<div className="d-flex justify-content-between align-items-center me-4">
-                                    <img className='' style={{ width: "40px", height: "40px", borderRadius: "50%" }} src={avtar} alt='profile' />
+                     <div className="position-relative">
+                     <img className='object-fit-cover' style={{ width: "40px", height: "40px", borderRadius: "50%" }} src={avtar} alt='profile' />
                                     <button
                                         type='button'
                                         className={`text_white res btn  fw-bold my-1`}
@@ -136,7 +143,72 @@ export default function Navbar(props) {
                                     </button>
                                     <IoIosArrowDown className='text_white' />
 
-                                </div>) : (<button
+
+
+                     </div>
+                                   {/* <div className="position-relative">
+                                   <div className='position-absolute profile_hover p-3' style={{background:"white",right:0, borderRadius:"10px",top:"25px"}} >
+                                     <div className="d-flex">
+                                        <img  className='object-fit-cover' style={{height:"45px", width:"45px",borderRadius:"10px"}}  src={avtar} alt="" />
+                                        <div className="d-flex ms-3 flex-column">
+                                            <h6 className='mb-0 fw-bold ' >Somumydip Jana</h6>
+                                            <p className='mb-0 text_grey'>soumyadipjana835@gmail.com</p>
+                                        </div>
+                                    </div>   
+                                    <hr className=''  style={{opacity:"0.1"}}/>
+
+                                    <div className='d-flex flex-column' >
+                                    <h6 className='mb-0 text_grey' style={{fontSize:"13px"}} >PROFILE</h6>
+                                    <Link className="d-flex mt-3 align-items-center">
+                                    <FaRegCircleUser className='gray_100' />
+                                    <h6 className='mb-0 ms-3 gray_100 '>Profile Settings</h6>
+                                    </Link>
+                                    </div>
+                                    <hr className=''  style={{opacity:"0.1"}}/>
+
+                                    <div className='d-flex flex-column' >
+                                    <h6 className='mb-0 text_grey' style={{fontSize:"13px"}} >PREFERENCES</h6>
+                                    <div className="d-flex mt-3 align-items-center">
+                                    <FaRegHeart  className='gray_100 ' />
+                                    <h6 className='mb-0 ms-3  gray_100' >Wishlist</h6>
+                                    </div>
+                                    </div>
+                                    <hr className=''  style={{opacity:"0.1"}}/>
+
+
+                                    <div className='d-flex flex-column' >
+                                    <h6 className='mb-0 text_grey' style={{fontSize:"13px"}} >TRAVEL</h6>
+                                    <div className="d-flex mt-3 align-items-center">
+                                    <FiGlobe className='gray_100' />
+                                    <h6 className='mb-0 ms-3 gray_100 '>Profile Settings</h6>
+                                    </div>
+                                    <div className="d-flex mt-3 align-items-center">
+                                    <TbCoinRupee style={{fontSize:"18px"}} className='gray_100' />
+                                    <h6 className='mb-0 ms-3 gray_100 ' >Redeem Coins</h6>
+                                    </div>
+                                    </div>
+
+                                    <hr className=''  style={{opacity:"0.1"}}/>
+
+                                    <div className='d-flex flex-column' >
+                                    <div className="d-flex  align-items-center">
+                                    <MdHelpOutline style={{fontSize:"18px"}} className='gray_100' />
+                                    <h6 className='mb-0 ms-3 gray_100 '>Contact Us</h6>
+                                    </div>
+                                    <div className="d-flex mt-3  align-items-center">
+                                    <MdExitToApp style={{fontSize:"18px"}} className='text-danger' />
+                                    <h6 className='mb-0 ms-3 text-danger '>Log Out</h6>
+                                    </div>
+                                    </div>
+
+
+                                </div>
+                                   </div> */}
+
+
+                                </div>) : (
+                                
+                                <><button
                                     type='button'
                                     className={`text-white res btn me-2 fw-bold my-1 ${btnActive === 'btn1' ? 'navButton1' : ''}`}
                                     style={{ border: 0 }}
@@ -144,7 +216,13 @@ export default function Navbar(props) {
                                     data-bs-toggle="modal" data-bs-target="#exampleModalCenter"
                                 >
                                     Login Or Sign up
-                                </button>)
+                                </button>
+                                
+                                
+                              
+                                </>
+                                
+                                )
                             }
 
                            <Link to='/customPackages'> <button
@@ -159,6 +237,9 @@ export default function Navbar(props) {
                     </div>
                 </div>
             </nav>
+
+
+            
         </>
     );
 }
