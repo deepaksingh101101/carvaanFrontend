@@ -286,7 +286,7 @@ try {
 </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                <ErrorMessage message="Please Select Atleast one"/>
+                {/* <ErrorMessage message="Please Select Atleast one"/> */}
                 </div>
               </div>
 

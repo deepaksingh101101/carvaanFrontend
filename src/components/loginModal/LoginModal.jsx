@@ -2,6 +2,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from "jwt-decode";
 import {  useDispatch } from 'react-redux';
+import { useRef } from 'react';
 
 import './LoginModal.css'
 import google from '../../assets/home/google.png'
@@ -16,13 +17,16 @@ import { setIsAuthenticated } from '../../store/slices/isAuthenticated';
 export default function LoginModal() {
 
   const {register,handleSubmit,formState:{errors}}=useForm()
-
+  const closeButtonRef = useRef(null)
 
 const [userEmail, setUserEmail] = useState("");
 const [showOtpBox, setShowOtpBox] = useState(false);
 // const [showEmailInputError,setShowEmailInputError]= useState(false);
 const[sendBtnContent,setSendBtnContent]=useState("Send Otp");
 // const [isUserLogin, setIsUserLogin] = useState(false)
+const handleCloseModal = () => {
+  closeButtonRef.current.click(); // Trigger click on the close button
+};
 const handleSendOtp =  (data) => {
   setSendBtnContent("Resend Otp")
     // setShowEmailInputError(false);
@@ -46,7 +50,7 @@ const handleGoogleLogin=async (email)=>{
       localStorage.setItem("accessToken",response.data.accessToken)
       localStorage.setItem("refreshToken",response.data.refreshToken)
       dispatch(setIsAuthenticated())
-      setModal(false)
+      handleCloseModal();
     }
   } catch (error) {
     console.log(error)
@@ -125,6 +129,7 @@ console.log(data)
   {/* <button type="submit" className="btn btn-primary">Submit</button> */}
 
   <div className="separator login_label my-3 ">or use one of these options</div>
+  <button type="button" className="btn btn-secondary d-none " id="close_login_modal"  ref={closeButtonRef}  data-bs-dismiss="modal">Close</button>
 
   {/* <div className="d-flex mt-3 justify-content-center login_label">
 <button type="button"  className="btn mt-1 w-100  modal_height_btn">
