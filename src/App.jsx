@@ -9,6 +9,8 @@ import LoginModal from './components/loginModal/LoginModal';
 import ContactUs from './pages/contactUs/ContactUs';
 import CustomPackages from './pages/customPackages/CustomPackages';
 import ExistingPackage from './pages/existingPackage/ExistingPackage';
+import CardView from './pages/cardView/CardView';
+import CheckOut from './pages/checkOut/CheckOut';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
 
 
      <BrowserRouter>
-     <Navbar/>
+     {/* <Navbar/> */}
      <LoginModal/>
       <Routes>
         <Route path="/" element={<Home />}/>
@@ -25,7 +27,8 @@ function App() {
         <Route path="/contactUs" element={<ContactUs />}/>
         <Route path="/customPackages" element={<CustomPackages />}/>
         <Route path="/existingPackage" element={<ExistingPackage />}/>
-      
+        <Route path="/cardView" element={<CardView />}/>
+        <Route path="/checkOut" element={<CheckOut/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

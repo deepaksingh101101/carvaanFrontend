@@ -8,7 +8,7 @@ import team4 from '../../assets/about/team4.jfif'
 import team5 from '../../assets/about/team5.jfif'
 import team6 from '../../assets/about/team6.jfif'
 import share from '../../assets/about/share.svg'
-import Navbar from '../../components/navbar/Navbar'
+// import Navbar from '../../components/navbar/Navbar'
 export default function About() {
 
   const teamsCardData=[
@@ -53,7 +53,7 @@ export default function About() {
 
   return (
 <>
-<Navbar bg={"#13182F"}/>
+{/* <Navbar bg={"#13182F"}/> */}
 <div className="container about d-flex flex-column ">
 <h1 className='text-center fw-bold our_story display-4'  >Our Story</h1> 
 <p className='our_story_p   text-center fw-medium mt-4'  >Welcome to Carvaan, where the journey begins beyond the ordinary. We are not just a travel website; we are the architects of unforgettable adventures. At Carvaan, we've redefined the travel experience by creating a groundbreaking marketplace connecting B2C brands offering captain-led group trips with enthusiastic travelers seeking seamless exploration.</p>   

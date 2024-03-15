@@ -1,0 +1,96 @@
+#body .heading{
+   border-radius: 10px 10px 0px 0px;
+    background-color: var(--blue-bg-secondary);
+}
+#body .outer_box{
+    font-family: var(--font-primary);
+}
+#body .heading_2{
+    border-radius: 10px 10px 0px 0px;
+    background-color: #F2C94C;
+    width: 100%;
+}
+#body .list_no{
+    color: var(--black);
+}
+/* CheckOut.css */
+
+/* Style for input fields when they are focused */
+.form-control:focus {
+    border-color: #007bff; /* Blue border color */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue glow effect */
+  }
+/* CheckOut.css */
+.traveler-count-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #EDEDED;
+    color: #5C5C5C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: '-4px'
+  }
+  .coupon-btm{
+    width: 3rem;
+   }
+  .apply-coupon-btn {
+    width: 16rem; 
+  }
+  
+  
+  @media (max-width: 2560px){
+    .card {
+      width: 22rem; 
+    }
+    .confirm-btn{
+      width: 23.5rem;
+    }
+  }
+  @media (max-width: 1024px){
+    .card {
+      width: 22rem; 
+    }
+  }
+  @media (max-width: 768px){ 
+    .card {
+      width: 27rem; 
+    }
+    .confirm-btn{
+      width: 28.3rem;
+    }
+  }
+ 
+  @media (max-width: 425px) { 
+    .card {
+      width: 18rem; 
+      .apply-coupon-btn {
+        width: rem; 
+      }
+     
+    }
+    .confirm-btn{
+      width: 19.5rem;
+    }
+  }
+  @media (max-width: 320px) { 
+    .card {
+      width: 16rem; 
+      .apply-coupon-btn {
+        width: rem; 
+      }
+      .coupon-btn{
+        width: 6rem;
+      }
+      
+    }
+    .confirm-btn{
+      width: 17.3rem;
+    }
+  }
+  
+ 
+

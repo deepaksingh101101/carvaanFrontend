@@ -1,0 +1,6 @@
+.square-badge {
+    border-radius: 0.25rem; /* Adjust border-radius as needed */
+}
+.card-body .accordion-item:not(:last-child) {
+    border-bottom: 1px dotted #007bff; /* Color can be adjusted as needed */
+}

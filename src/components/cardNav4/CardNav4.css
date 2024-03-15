@@ -1,0 +1,18 @@
+#body .font_14{
+    font-size: 14px;
+}
+/* Add this CSS to your CardNav4.css file */
+button {
+    border: none;
+    background: none;
+    color: blue; /* Change the button text color to blue */
+  }
+  
+  .my-list li::marker {
+    color: #27AE60;
+  }
+  @media screen ( max-width: 1024px){
+    .utily-box(
+      
+    )
+  }

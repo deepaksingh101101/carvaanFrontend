@@ -1,0 +1,29 @@
+#body .rect_img{
+   max-width: 400px;
+   height: auto; 
+}
+@media screen and (min-width: 2560px){
+    #body .rect_img{
+        min-width: 520px;
+    }
+}
+@media screen and (max-width: 1024px){
+    #body .rect_img{
+        max-width: 325px;
+    }
+}
+@media screen and (max-width: 768px){
+    #body .rect_img{
+        max-width: 600px;
+    }
+}
+@media screen and (max-width: 375px){
+    #body .rect_img{
+        max-width: 310px;
+    }
+}
+@media screen and (max-width: 320px){
+    #body .rect_img{
+        max-width: 250px;
+    }
+}
