@@ -19,16 +19,16 @@ export default function CardViewtabs() {
     <>
       <ul className="nav w-100 nav-tabs box" id="myTab" role="tablist">
         <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-          <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Overview" type="button" role="tab" aria-controls="Overview" aria-selected="true">Overview</button>
+        <a style={{textDecoration:"none"}} href='#overview_outer'> <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 " id="home-tab"  data-bs-target="#Overview" type="button" role="tab" aria-controls="Overview" aria-selected="true">Overview</button></a>
         </li>
         <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-          <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="profile-tab" data-bs-toggle="tab" data-bs-target="#Itineraries" type="button" role="tab" aria-controls="Itineraries" aria-selected="false">Itineraries</button>
+         <a style={{textDecoration:"none"}} href='#itenarie_outer'> <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }}  className="nav-link    px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="profile-tab"  data-bs-target="#Itineraries"  type="button" role="tab" aria-controls="Itineraries" aria-selected="false">Itineraries</button></a>
         </li>
         <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
           <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="Reviews-tab" data-bs-toggle="tab" data-bs-target="#Reviews" type="button" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</button>
         </li>
         <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-          <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="InclusionExclusion-tab" data-bs-toggle="tab" data-bs-target="#InclusionExclusion" type="button" role="tab" aria-controls="InclusionExclusion" aria-selected="false">Inclusion/Exclusion</button>
+        <a style={{textDecoration:"none"}} href='#inclusion_outer'> <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="InclusionExclusion-tab"  data-bs-target="#InclusionExclusion" type="button" role="tab" aria-controls="InclusionExclusion" aria-selected="false">Inclusion/Exclusion</button></a>
         </li>
         <li className="nav-item me-2 me-sm-3 me-md-3 me-lg-3  position-relative" role="presentation">
           <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="AbouttheAgency-tab" data-bs-toggle="tab" data-bs-target="#AbouttheAgency" type="button" role="tab" aria-controls="AbouttheAgency" aria-selected="false">About the Agency</button>
@@ -36,7 +36,6 @@ export default function CardViewtabs() {
       </ul>
       <div className='row'>
         <div className='col-lg-8'>
-
           <div className='mt-4'>
             <h2>Lakeside Motel Warefront</h2>
             <p className='d-flex align-items-center gap-2'>
@@ -55,7 +54,7 @@ export default function CardViewtabs() {
           </div>
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="overview-tab">
-              <Cardnav />
+              <Cardnav/>
             </div>
             <div className="tab-pane fade" id="Itineraries" role="tabpanel" aria-labelledby="profile-tab">
               <Cardnav2 /> 
