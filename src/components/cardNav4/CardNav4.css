@@ -11,8 +11,4 @@ button {
   .my-list li::marker {
     color: #27AE60;
   }
-  @media screen ( max-width: 1024px){
-    .utily-box(
-      
-    )
-  }
+  
