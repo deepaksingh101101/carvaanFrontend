@@ -15,21 +15,30 @@
   max-width: 421px;
   height: auto;
 }
+
 @media screen and (min-width: 2560px) {
   #body .carvan_img {
     min-width: 232px; 
   }
+  .share-whatsapp {
+    display: none;
 }
+}
+/* @media screen and (max-width: 1440px) {
+  #body .carvan_img {
+    max-width: 350px; 
+  }
+} */
 @media screen and (max-width: 1024px) {
   #body .carvan_img {
     max-width: 315px; 
   }
 }
+
 @media screen and (max-width: 768px) {
   #body .carvan_img {
     max-width: 232px; 
-  }
-  
+  } 
 }
 
 @media screen and (max-width: 375px) {
@@ -43,4 +52,7 @@
     max-width: 295px;
   }
 }
+
+
+
 
