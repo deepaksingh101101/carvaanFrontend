@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './cardViewtabs.css';
 import '../../components/cardnav/Cardnav';
 import Cardnav from '../../components/cardnav/Cardnav';
@@ -15,27 +15,84 @@ import { FaWhatsapp } from "react-icons/fa";
 
 
 export default function CardViewtabs() {
+  const [Overview, setOverview] = useState(true);
+  const [Iter, setIter] = useState(false);
+  const [Inclusion, setInclusion] = useState(false);
+  const [Reviews, setReviews] = useState(false);
+  const [About, setAbout] = useState(false);
+
+  const handleOverview = () => {
+    setOverview(true);
+    setIter(false);
+    setInclusion(false);
+    setReviews(false);
+    setAbout(false)
+  }
+  const handleIter = () => {
+    setOverview(false);
+    setIter(true);
+    setInclusion(false);
+    setReviews(false);
+    setAbout(false)
+  }
+  const handleInclusion = () => {
+    setOverview(false);
+    setIter(false);
+    setInclusion(true);
+    setReviews(false);
+    setAbout(false)
+  }
+  const handleReviews = () => {
+    setOverview(false);
+    setIter(false);
+    setInclusion(false);
+    setReviews(true);
+    setAbout(false)
+  }
+  const handleAbout = () => {
+    setOverview(false);
+    setIter(false);
+    setInclusion(false);
+    setReviews(false);
+    setAbout(true);
+  }
+
+  const itinerariesRef = useRef(null);
+  const inclusionRef = useRef(null);
+
+  // useEffect to perform the scroll when the Itineraries tab is active
+  useEffect(() => {
+    if (Iter) {
+      itinerariesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+    if (Inclusion) {
+      inclusionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [Iter, Inclusion]);
   return (
     <>
       <ul className="nav w-100 nav-tabs box" id="myTab" role="tablist">
-        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-        <a style={{textDecoration:"none"}} href='#overview_outer'> <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 " id="home-tab"  data-bs-target="#Overview" type="button" role="tab" aria-controls="Overview" aria-selected="true">Overview</button></a>
+        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" onClick={handleOverview} role="presentation">
+          <button style={{ fontSize: 'clamp(10px, 1.2vw, 18px)' }} className={`nav-link  px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 ${Overview ? 'active' : ''} `} id="home-tab" data-bs-toggle={`${Overview ? 'tab' : 'tab'}`} data-bs-target="#Overview" type="button" role="tab" aria-controls="Overview" aria-selected={`${Overview ? 'true' : 'false'}`}>Overview</button>
         </li>
-        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-         <a style={{textDecoration:"none"}} href='#itenarie_outer'> <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }}  className="nav-link    px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="profile-tab"  data-bs-target="#Itineraries"  type="button" role="tab" aria-controls="Itineraries" aria-selected="false">Itineraries</button></a>
+
+        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" onClick={handleIter} role="presentation">
+          <button style={{ fontSize: 'clamp(10px, 1.2vw, 18px)' }} className={`nav-link  px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 ${Iter ? 'active' : ''}`} id="profile-tab" data-bs-toggle={`${Iter ? 'tab' : 'tab'}`} data-bs-target="#Itineraries" type="button" role="tab" aria-controls="Itineraries" aria-selected={`${Iter ? 'true' : 'false'}`}>Itineraries</button>
         </li>
-        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-          <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="Reviews-tab" data-bs-toggle="tab" data-bs-target="#Reviews" type="button" role="tab" aria-controls="Reviews" aria-selected="false">Reviews</button>
+
+        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" onClick={handleInclusion} role="presentation">
+          <button style={{ fontSize: 'clamp(10px, 1.2vw, 18px)' }} className={`nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 ${Inclusion ? 'active' : ''}`} id="InclusionExclusion-tab" data-bs-target="#InclusionExclusion" type="button" role="tab" aria-controls="InclusionExclusion" aria-selected={`${Iter ? 'true' : 'false'}`}>Inclusion/Exclusion</button>
         </li>
-        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" role="presentation">
-        <a style={{textDecoration:"none"}} href='#inclusion_outer'> <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="InclusionExclusion-tab"  data-bs-target="#InclusionExclusion" type="button" role="tab" aria-controls="InclusionExclusion" aria-selected="false">Inclusion/Exclusion</button></a>
+        <li className="nav-item   me-2 me-sm-3 me-md-3 me-lg-3 position-relative" onClick={handleReviews} role="presentation">
+          <button style={{ fontSize: 'clamp(10px, 1.2vw, 18px)' }} className={`nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 ${Reviews ? 'active' : ''} `} id="Reviews-tab" data-bs-toggle={`${Reviews ? 'tab' : 'tab'}`} data-bs-target="#Reviews" type="button" role="tab" aria-controls="Reviews" aria-selected={`${Reviews ? 'true' : 'false'}`}>Reviews</button>
         </li>
-        <li className="nav-item me-2 me-sm-3 me-md-3 me-lg-3  position-relative" role="presentation">
-          <button style={{ fontSize: 'clamp(7px, 1.2vw, 18px)' }} className="nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0" id="AbouttheAgency-tab" data-bs-toggle="tab" data-bs-target="#AbouttheAgency" type="button" role="tab" aria-controls="AbouttheAgency" aria-selected="false">About the Agency</button>
+
+        <li className="nav-item me-2 me-sm-3 me-md-3 me-lg-3  position-relative" onClick={handleAbout} role="presentation">
+          <button style={{ fontSize: 'clamp(10px, 1.2vw, 18px)' }} className={`nav-link   px-0 px-sm-0 px-md-1 px-lg-2 text-dark border-0 ${About ? 'active' : ''} `} id="AbouttheAgency-tab" data-bs-toggle={`${About ? 'tab' : 'tab'}`} data-bs-target="#AbouttheAgency" type="button" role="tab" aria-controls="AbouttheAgency" aria-selected={`${About ? 'true' : 'false'}`}>About the Agency</button>
         </li>
       </ul>
       <div className='row'>
-        <div className='col-lg-8'>
+        <div className='col-lg-8 '>
           <div className='mt-4'>
             <h2>Lakeside Motel Warefront</h2>
             <p className='d-flex align-items-center gap-2'>
@@ -54,35 +111,50 @@ export default function CardViewtabs() {
           </div>
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="overview-tab">
-              <Cardnav/>
+              <Cardnav />
+              <Cardnav2 />
+              <CardNav4 />
+
             </div>
-            <div className="tab-pane fade" id="Itineraries" role="tabpanel" aria-labelledby="profile-tab">
-              <Cardnav2 /> 
+            <div className={`tab-pane fade ${Iter ? 'show active' : ''}`} id="Itineraries" role="tabpanel" aria-labelledby="profile-tab" >
+              <Cardnav />
+              <div ref={itinerariesRef}>
+                <Cardnav2 />
+              </div>
+              <CardNav4 />
             </div>
             <div className="tab-pane fade" id="Reviews" role="tabpanel" aria-labelledby="Reviews-tab">
               <CardNav3 />
+            </div>
+            <div className={`tab-pane fade ${Inclusion ? 'show active' : ''}`} id="InclusionExclusion" role="tabpanel" aria-labelledby="InclusionExclusion-tab">
+              <Cardnav />
+              <Cardnav2 />
+              <div ref={inclusionRef}>
+                <CardNav4 />
               </div>
-            <div className="tab-pane fade" id="InclusionExclusion" role="tabpanel" aria-labelledby="InclusionExclusion-tab">
-              <CardNav4 />
-              </div>
-            <div className="tab-pane fade" id="AbouttheAgency" role="tabpanel" aria-labelledby="AbouttheAgency-tab"
-            ><CardNav5 />
+            </div>
+            <div className="tab-pane fade" id="AbouttheAgency" role="tabpanel" aria-labelledby="AbouttheAgency-tab">
+              <CardNav5 />
             </div>
           </div>
         </div>
-        <div className='col-lg-4 mt-5'>
+        <div className='col-lg-4 mt-5 '>
 
-          <div className="container d-flex flex-column" >
-           
-              <a href="#" className="btn btn-primary border rounded mb-3 py-2 mx-1" style= {{background: "#AE4A84", color: "#FFFFFF"}}> Download as a PDF</a>
-              <FaRegFilePdf className="ms-2 " style= {{color: "#FFFFFF"}} />
-           
-            <a href="#" className="btn btn-primary border rounded mb-3 py-2 mx-1" style= {{background: "#AE4A84", color: "#FFFFFF"}}> Share with WhatsApp</a>
-              <FaWhatsapp className="me-2" style= {{color: "#FFFFFF"}} />
-             
-           
+          <div className="container d-flex flex-column align-items-end" style={{ display: 'inline-flex' }}>
+            <a href="#" className="btn btn-primary border rounded mb-3 py-2 d-flex align-items-center fw-semibold" style={{ background: "#AE4A84" }}>
+              
+              <span>Download as a PDF</span><FaRegFilePdf className="mx-2 fw-bold fs-4" style={{ color: "#FFFFFF" }} />
+            </a>
+
+            <a href="#" className="btn btn-primary border rounded mb-3 py-2 d-flex align-items-center share-whatsapp fw-semibold" style={{ background: "#AE4A8417" }}>
+              <FaWhatsapp className="mx-2 fw-bold fs-4" style={{ color: "#AE4A84" }} />
+              <span style= {{color: '#AE4A84'}}>Share with WhatsApp</span>
+            </a>
           </div>
-          <div className="container border rounded bg-white mt-1">
+
+
+
+          <div className="container border rounded bg-white mt-4">
             <div className='mt-4'>
               <h4>Pick up Location:</h4>
               <p><IoLocationOutline />Majnu ka Tela, Delhi</p>
