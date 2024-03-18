@@ -10,8 +10,9 @@ export default function CardNav4() {
 
     return (
         <>
-        <div className='container'>
-            <div className="container ">
+        <div className='container ms-0 mt-5 p-2'>
+        
+            <div className="container p-2">
                 <div className='p-2 border rounded bg-white'>
                     <h4 className="mt-2 ms-1">
                         <button
@@ -49,11 +50,11 @@ export default function CardNav4() {
                     </div>
                 </div>
             </div>
-            <div className='container ms-0 mt-5'>
+            <div className='container mt-5 p-2'>
                 <div className='p-2 border rounded bg-white'>
                     <h4 className="mt-2 ms-1"><LuBaggageClaim style={{ fontSize: '24px', color: '#4263C9' }} className='mx-2' />Your Packing Guide</h4>
                     <hr />
-                    <div className="row utily-box ">
+                    <div className="row ">
                         <div className="col-lg-2 ms-2 " style={{ minWidth: "178px" }}>
                             <ul className="ps-4 mb-0 my-list" >
                                 <li className='font_14 fw-semibold py-3 li_dot '>Sweater/hoodie</li>
@@ -93,6 +94,7 @@ export default function CardNav4() {
 
             </div>
             </div>
+            
         </>
     )
 }
